@@ -1,132 +1,100 @@
 /* ==========================================================================
    general
    ========================================================================== */
-@keyframes floating1 {
-  10% {
+@-webkit-keyframes floating1 {
+  0%,
+  100% {
     margin-top: 0px;
-    opacity: 0.4;
+    opacity: 0.6;
   }
   60% {
     margin-top: -6px;
+    opacity: 1;
+    /*box-shadow:0 0 20px @shine;*/
+  }
+}
+@keyframes floating1 {
+  0%,
+  100% {
+    margin-top: 0px;
+    opacity: 0.6;
+  }
+  60% {
+    margin-top: -6px;
+    opacity: 1;
+    /*box-shadow:0 0 20px @shine;*/
+  }
+}
+@-webkit-keyframes floating2 {
+  0%,
+  100% {
+    margin-top: 0px;
+    opacity: 0.4;
+  }
+  40% {
+    margin-top: -3px;
     opacity: 1;
   }
 }
 @keyframes floating2 {
-  0% {
+  0%,
+  100% {
     margin-top: 0px;
-    opacity: 1;
-  }
-  30% {
-    margin-top: 0px;
+    opacity: 0.4;
   }
   40% {
     margin-top: -3px;
-    opacity: 0.4;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes floating3 {
+  0%,
+  100% {
+    margin-top: 0px;
+    opacity: 0.6;
+  }
+  90% {
+    margin-top: -2px;
+    opacity: 1;
   }
 }
 @keyframes floating3 {
-  0% {
+  0%,
+  100% {
     margin-top: 0px;
-    opacity: 1;
-  }
-  30% {
-    margin-top: 4px;
+    opacity: 0.6;
   }
   90% {
     margin-top: -2px;
-    opacity: 0.4;
-  }
-  99% {
-    margin-top: 0px;
-  }
-}
-@keyframes floating4 {
-  0% {
-    margin-top: 0px;
     opacity: 1;
   }
-  30% {
-    margin-top: -2px;
-    opacity: 0.4;
-  }
-  90% {
-    margin-top: -4px;
-  }
-  99% {
-    margin-top: 0px;
-  }
 }
-@-webkit-keyframes floating1 {
-  10% {
+@-webkit-keyframes floating4 {
+  0%,
+  100% {
     margin-top: 0px;
     opacity: 0.4;
   }
   60% {
-    margin-top: -6px;
-    opacity: 1;
-  }
-}
-@-webkit-keyframes floating2 {
-  0% {
-    margin-top: 0px;
-    opacity: 1;
-  }
-  30% {
-    margin-top: 0px;
-  }
-  40% {
-    margin-top: -3px;
-    opacity: 0.4;
-  }
-}
-@-webkit-keyframes floating3 {
-  0% {
-    margin-top: 0px;
-    opacity: 1;
-  }
-  30% {
-    margin-top: 4px;
-  }
-  90% {
     margin-top: -2px;
-    opacity: 0.4;
-  }
-  99% {
-    margin-top: 0px;
-  }
-}
-@-webkit-keyframes floating4 {
-  0% {
-    margin-top: 0px;
     opacity: 1;
-  }
-  30% {
-    margin-top: -2px;
-    opacity: 0.4;
   }
   90% {
     margin-top: -4px;
   }
-  99% {
-    margin-top: 0px;
-  }
 }
-@keyframes hole {
-  25% {
-    -webkit-transform: scale(0.7) rotate(0deg);
-            transform: scale(0.7) rotate(0deg);
-  }
-  65% {
-    -webkit-transform: scale(4) rotate(100deg);
-            transform: scale(4) rotate(100deg);
-  }
-  80% {
-    -webkit-transform: scale(4.5) rotate(90deg);
-            transform: scale(4.5) rotate(90deg);
-  }
+@keyframes floating4 {
+  0%,
   100% {
-    -webkit-transform: scale(12) rotate(90deg);
-            transform: scale(12) rotate(90deg);
+    margin-top: 0px;
+    opacity: 0.4;
+  }
+  60% {
+    margin-top: -2px;
+    opacity: 1;
+  }
+  90% {
+    margin-top: -4px;
   }
 }
 @-webkit-keyframes hole {
@@ -147,23 +115,293 @@
             transform: scale(12) rotate(90deg);
   }
 }
+@keyframes hole {
+  25% {
+    -webkit-transform: scale(0.7) rotate(0deg);
+            transform: scale(0.7) rotate(0deg);
+  }
+  65% {
+    -webkit-transform: scale(4) rotate(100deg);
+            transform: scale(4) rotate(100deg);
+  }
+  80% {
+    -webkit-transform: scale(4.5) rotate(90deg);
+            transform: scale(4.5) rotate(90deg);
+  }
+  100% {
+    -webkit-transform: scale(12) rotate(90deg);
+            transform: scale(12) rotate(90deg);
+  }
+}
+/*flipping avatar*/
+@-webkit-keyframes flipping {
+  0% {
+    /*bottom:0;*/
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  100% {
+    /*bottom:30px;*/
+    -webkit-transform: rotateY(2340deg);
+            transform: rotateY(2340deg);
+  }
+}
+@keyframes flipping {
+  0% {
+    /*bottom:0;*/
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  100% {
+    /*bottom:30px;*/
+    -webkit-transform: rotateY(2340deg);
+            transform: rotateY(2340deg);
+  }
+}
+@-webkit-keyframes fade-in-out {
+  0% {
+    bottom: 0;
+    opacity: 0;
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    bottom: 160px;
+    -webkit-transform: scale(0.6);
+            transform: scale(0.6);
+  }
+}
+@keyframes fade-in-out {
+  0% {
+    bottom: 0;
+    opacity: 0;
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    bottom: 160px;
+    -webkit-transform: scale(0.6);
+            transform: scale(0.6);
+  }
+}
+@-webkit-keyframes fade-in {
+  0% {
+    top: 100px;
+    opacity: 0;
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+  }
+  100% {
+    top: 0px;
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes fade-in {
+  0% {
+    top: 100px;
+    opacity: 0;
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+  }
+  100% {
+    top: 0px;
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@-webkit-keyframes fade-out {
+  0% {
+    top: 100px;
+    opacity: 1;
+  }
+  100% {
+    top: -800%;
+    opacity: 0;
+  }
+}
+@keyframes fade-out {
+  0% {
+    top: 100px;
+    opacity: 1;
+  }
+  100% {
+    top: -800%;
+    opacity: 0;
+  }
+}
+@-webkit-keyframes avatar_fadein {
+  0% {
+    /*top:100px;*/
+    opacity: 0;
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+  }
+  100% {
+    /*top:0px;*/
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes avatar_fadein {
+  0% {
+    /*top:100px;*/
+    opacity: 0;
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+  }
+  100% {
+    /*top:0px;*/
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@-webkit-keyframes arrow_up {
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes arrow_up {
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes text_shine {
+  0%,
+  100% {
+    text-shadow: none;
+  }
+  50% {
+    text-shadow: 0 2px 30px #00c6ff;
+  }
+}
+@-webkit-keyframes box_shine {
+  0%,
+  100% {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  50% {
+    -webkit-box-shadow: 0 0 50px #00c6ff;
+            box-shadow: 0 0 50px #00c6ff;
+  }
+}
+/*leaving animation*/
+@-webkit-keyframes notice_fadeout {
+  0% {
+    /*top:100px;*/
+    opacity: 1;
+  }
+  100% {
+    /*top:-800%;*/
+    opacity: 0;
+  }
+}
+@keyframes notice_fadeout {
+  0% {
+    /*top:100px;*/
+    opacity: 1;
+  }
+  100% {
+    /*top:-800%;*/
+    opacity: 0;
+  }
+}
+@-webkit-keyframes avatar_leave {
+  0% {
+    top: 40%;
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    top: -10%;
+    opacity: 0;
+  }
+}
+@keyframes avatar_leave {
+  0% {
+    top: 40%;
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    top: -10%;
+    opacity: 0;
+  }
+}
+@-webkit-keyframes into_blackhole {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    left: 50%;
+    opacity: 0;
+  }
+}
+@keyframes into_blackhole {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    left: 50%;
+    opacity: 0;
+  }
+}
 html {
   font-size: 1em;
   line-height: 1.4;
-  font-family: "Hiragino Sans GB W3", "Microsoft YaHei", sans-serif;
+  font-family: "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
   font-weight: normal;
 }
 body {
   min-height: 100%;
   background: #40454e;
-}
-body.share {
-  background: #282b33;
-  overflow: hidden;
-}
-html,
-body {
-  /*overflow:hidden;*/
 }
 div,
 input,
@@ -191,9 +429,11 @@ input:focus {
 }
 .blue_btn {
   background-color: #079fd1;
-  border-radius: 2px;
+  border-radius: 4px;
   color: white;
   border: #079fd1;
+  -webkit-box-shadow: 0 2px 0 #40454e;
+          box-shadow: 0 2px 0 #40454e;
 }
 .blue_btn:active {
   background-color: #045f7d;
@@ -219,34 +459,30 @@ a {
   text-decoration: none;
 }
 /* ==========================================================================
-    create group
+     #####  ######  #######    #    ####### ####### 
+    #     # #     # #         # #      #    #       
+    #       #     # #        #   #     #    #       
+    #       ######  #####   #     #    #    #####   
+    #       #   #   #       #######    #    #       
+    #     # #    #  #       #     #    #    #       
+     #####  #     # ####### #     #    #    ####### 
+                                                
    ========================================================================== */
 body.create {
-  background: #fafafa;
+  background-color: #fafafa;
 }
-.create.submitted #create_group input[type="text"] {
-  -webkit-animation-name: hole;
-          animation-name: hole;
-  -webkit-animation-duration: 4s;
-          animation-duration: 4s;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
-  -webkit-transition-timing-function: ease-in;
-          transition-timing-function: ease-in;
+body.submitted {
+  background-color: #0b121b;
+  -webkit-transition: background-color 3s;
+          transition: background-color 3s;
 }
-.create.submitted #create_group .notice,
-.create.submitted #create_group .checkbox,
-.create.submitted #create_group input[type="submit"] {
+body.submitted #create_group {
   opacity: 0;
   -webkit-transition: opacity 1.5s;
           transition: opacity 1.5s;
 }
 #create_group {
-  margin: 2.4em 0 3em 0;
+  margin: 1.4em 0 3em 0;
 }
 #create_group input[type="text"] {
   background: #282b33;
@@ -261,10 +497,8 @@ body.create {
   opacity: 1;
 }
 #create_group .checkbox {
-  /*float: left;*/
-  /*width:60%;*/
   color: #2a2d32;
-  margin-top: 1.8em;
+  margin-top: 1.3em;
   font-size: 1.2em;
   display: inline-block;
 }
@@ -280,13 +514,12 @@ body.create {
   background-color: #282b33;
   float: left;
 }
-#create_group .checkbox input:checked + label {
-  color: #079fd1;
+#create_group .checkbox .box img {
+  width: 22px;
+  display: none;
 }
-#create_group .checkbox input:checked + label div.box {
-  background: #282b33 url('../img/check.png') no-repeat center;
-  -webkit-background-size: 16px 16px;
-          background-size: 16px 16px;
+#create_group .checkbox input:checked + label div.box img {
+  display: block;
 }
 #create_group input[type="submit"] {
   float: right;
@@ -304,108 +537,97 @@ body.create {
   width: 100%;
   color: #454a52;
   border-radius: 4px;
-  padding: 0.4em 1em;
+  padding: 6px 10px;
   margin-top: 0.2em;
 }
 .notice p {
   line-height: 1.4;
-  font-size: 0.9em;
+  font-size: 12px;
   margin: 0;
 }
 /* ==========================================================================
-   SHARE
+     #####  #     #    #    ######  ####### 
+    #     # #     #   # #   #     # #       
+    #       #     #  #   #  #     # #       
+     #####  ####### #     # ######  #####   
+          # #     # ####### #   #   #       
+    #     # #     # #     # #    #  #       
+     #####  #     # #     # #     # ####### 
    ========================================================================== */
-.share {
+body.share {
+  background-color: #0b121b;
+  overflow: hidden;
+}
+body.share .container {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  overflow: initial;
   color: white;
   width: 100%;
   overflow-x: hidden;
+  /****************
+            AVATARS
+        *****************/
+  /*我*/
+  /*朋友1*/
+  /*朋友2*/
 }
-.share #arrow {
+body.share .container #arrow {
   width: 50%;
   float: right;
   margin-top: 10px;
 }
-.share h1 {
+body.share .container h1 {
   font-size: 1.5em;
   clear: both;
   text-align: center;
   font-weight: normal;
 }
-.share h2 {
+body.share .container h2 {
   font-size: 1.3em;
   text-align: center;
   font-weight: normal;
 }
-.share strong {
+body.share .container strong {
   padding: 0 1px;
   font-weight: normal;
 }
-/*#share_avatars{
-    background:url('../img/share_bg.png') no-repeat center;
-    background-size:160px auto;
-   
-    width:160px;
-    height:166px;
-    margin:0 auto;
-
-    position: relative;
-
-     @avatar: 60px;
-
-    .avatar{
-        width:@avatar;
-        height:@avatar;
-        border-radius:50%;
-        background-color: #303339;
-        position: absolute;
-        
-        img{
-            width:@avatar;
-        }
-
-        &.first{
-            top:49px;
-            left:3px;
-        }
-
-        &.second{
-            top:3px;
-            left:97px;
-        }
-
-        &.third{
-            top:103px;
-            left:97px;
-        }
-    }
-
-}
-*/
-.container.share {
-  padding: 0;
-  margin: 0;
-  height: 100%;
-  /*general avatar styles*/
-  /*我*/
-  /*朋友1*/
-  /*朋友2*/
-  /****************
-    default positions
-    *****************/
-  /*进入share页面，头像闪烁，文字淡入*/
-  /*新人加入*/
-  /*人满，开始聊天*/
-}
-.container.share #share_notice {
-  opacity: 0;
+body.share .container .notice_box {
   position: absolute;
-  top: 0;
   width: 100%;
-  -webkit-transform: scale(0) translate(0, 450px);
-      -ms-transform: scale(0) translate(0, 450px);
-          transform: scale(0) translate(0, 450px);
+  z-index: 999;
 }
-.container.share #avatars_container {
+body.share .container #start_notice {
+  top: 200px;
+}
+body.share .container #start_notice h1,
+body.share .container #start_notice h2 {
+  opacity: 0;
+}
+body.share .container #share_notice {
+  top: 0;
+}
+body.share .container #share_notice h1,
+body.share .container #share_notice h2,
+body.share .container #share_notice img {
+  opacity: 0;
+}
+body.share .container #full_notice {
+  top: 150px;
+}
+body.share .container #full_notice h1,
+body.share .container #full_notice h2 {
+  opacity: 0;
+}
+body.share .container #guest_notice {
+  top: 150px;
+}
+body.share .container #guest_notice h1,
+body.share .container #guest_notice h2 {
+  opacity: 0;
+}
+body.share .container #avatars_container {
   position: absolute;
   top: 40%;
   width: 420px;
@@ -413,47 +635,71 @@ body.create {
   margin: 0 auto;
   left: 50%;
   margin-left: -210px;
-  opacity: 0;
   overflow: initial;
-  -webkit-transform: scale(0) translate(0, -450px);
-      -ms-transform: scale(0) translate(0, -450px);
-          transform: scale(0) translate(0, -450px);
+  z-index: 1000;
 }
-.container.share .avatar {
-  background: url('../img/avatar_unknown.png') no-repeat center;
+body.share .container .avatar {
+  opacity: 0;
+  background: url('../img/avatar_unknown2.png') no-repeat center;
   -webkit-background-size: 100% 100%;
           background-size: 100%;
   position: absolute;
   z-index: 1000;
-  width: 46px;
-  height: 46px;
-  margin-left: -23px;
-  /*position animation*/
+  width: 42px;
+  height: 42px;
+  margin-left: -21px;
+  border-radius: 50%;
+  overflow: hidden;
   -webkit-transition: top 1s, left 1s, width 0.5s, height 0.5s, opacity 1s, margin-left 0.5s;
           transition: top 1s, left 1s, width 0.5s, height 0.5s, opacity 1s, margin-left 0.5s;
 }
-.container.share .avatar span {
+body.share .container .avatar span {
   display: none;
 }
-.container.share .avatar.big {
+body.share .container .avatar.big {
   width: 66px;
   height: 66px;
   margin-left: -33px;
 }
-.container.share .avatar.small {
-  width: 30px;
-  height: 30px;
-  margin-left: -15px;
+body.share .container .avatar.small {
+  width: 24px;
+  height: 24px;
+  margin-left: -11px;
 }
-.container.share .avatar img {
+body.share .container .avatar img {
   width: 100%;
   -webkit-transition: margin-left 1s;
           transition: margin-left 1s;
 }
-.container.share #ava_1 {
-  z-index: 2000;
+body.share .container .avatar .flip_avatar {
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  /*flip animation*/
+  -webkit-transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out;
+  /*flip animation*/
 }
-.container.share #ava_1 span {
+body.share .container .avatar .side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  border-radius: 50%;
+  overflow: hidden;
+  display: block;
+}
+body.share .container .avatar .side.back {
+  display: block;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+body.share .container #ava_1 {
+  z-index: 2000;
+  background-image: none;
+}
+body.share .container #ava_1 span {
   display: block;
   width: 100%;
   text-align: center;
@@ -461,115 +707,115 @@ body.create {
   top: -23px;
   color: white;
 }
-.container.share #ava_2 {
+body.share .container #ava_2 {
   z-index: 1999;
+  background-image: url('../img/avatar_unknown.png');
 }
-.container.share #ava_3 {
+body.share .container #ava_3 {
   z-index: 1998;
+  background-image: url('../img/avatar_unknown.png');
 }
-.container.share .position1 #ava_1 {
-  left: 33%;
-  top: 90px;
-}
-.container.share .position1 #ava_2 {
-  left: 65%;
-  top: 80px;
-}
-.container.share .position1 #ava_3 {
+body.share .container .position1 #ava_1 {
   left: 50%;
-  top: 140px;
+  top: 60px;
 }
-.container.share .position1 #ava_4 {
-  left: 66%;
-  top: 150px;
+body.share .container .position1 #ava_2 {
+  left: 65%;
+  top: 100px;
 }
-.container.share .position1 #ava_5 {
+body.share .container .position1 #ava_3 {
+  left: 40%;
+  top: 120px;
+}
+body.share .container .position1 #ava_4 {
+  left: 55%;
+  top: 155px;
+}
+body.share .container .position1 #ava_5 {
   left: 82%;
   top: 120px;
 }
-.container.share .position1 #ava_6 {
+body.share .container .position1 #ava_6 {
   left: 90%;
   top: 70px;
 }
-.container.share .position1 #ava_7 {
+body.share .container .position1 #ava_7 {
   left: 99%;
   top: 110px;
 }
-.container.share .position1 #ava_8 {
-  left: 50%;
-  top: 70px;
+body.share .container .position1 #ava_8 {
+  left: 80%;
+  top: 40px;
 }
-.container.share .position1 #ava_9 {
+body.share .container .position1 #ava_9 {
   left: 22%;
   top: 60px;
 }
-.container.share .position1 #ava_10 {
-  left: 30%;
+body.share .container .position1 #ava_10 {
+  left: 26%;
   top: 160px;
 }
-.container.share .position1 #ava_11 {
+body.share .container .position1 #ava_11 {
   left: 8%;
   top: 80px;
 }
-.container.share .position1 #ava_12 {
+body.share .container .position1 #ava_12 {
   left: 3%;
   top: 130px;
 }
-.container.share .position1 #ava_13 {
-  left: 60%;
-  top: 200px;
+body.share .container .position1 #ava_13 {
+  left: 66%;
+  top: 190px;
 }
-.container.share .position1 #ava_14 {
+body.share .container .position1 #ava_14 {
   left: 67%;
-  top: 40px;
+  top: 55px;
 }
-.container.share .position1 #ava_15 {
-  left: 78%;
-  top: 60px;
+body.share .container .position1 #ava_15 {
+  left: 74%;
+  top: 80px;
 }
-.container.share .position1 #ava_16 {
+body.share .container .position1 #ava_16 {
   left: 98%;
   top: 50px;
 }
-.container.share .position1 #ava_17 {
+body.share .container .position1 #ava_17 {
   left: 77%;
   top: 176px;
 }
-.container.share .position1 #ava_18 {
+body.share .container .position1 #ava_18 {
   left: 93%;
   top: 160px;
 }
-.container.share .position1 #ava_19 {
+body.share .container .position1 #ava_19 {
   left: 38%;
   top: 50px;
 }
-.container.share .position1 #ava_20 {
+body.share .container .position1 #ava_20 {
   left: 17%;
   top: 120px;
 }
-.container.share .position1 #ava_21 {
+body.share .container .position1 #ava_21 {
   left: 15%;
   top: 160px;
 }
-.container.share .position1 #ava_22 {
+body.share .container .position1 #ava_22 {
   left: 3%;
   top: 50px;
 }
-.container.share .position1 #ava_23 {
+body.share .container .position1 #ava_23 {
   left: 40%;
   top: 190px;
 }
-.container.share .position1 #ava_24 {
-  opacity: 0;
+body.share .container .position1 #ava_24 {
+  left: 26%;
+  top: 130px;
+}
+body.share .container .position1 #ava_25 {
   left: 33%;
   top: 90px;
 }
-.container.share .position1 #ava_25 {
-  opacity: 0;
-  left: 33%;
-  top: 90px;
-}
-.container.share .position2 {
+body.share .container .position2 {
   /*所有头像大小相同*/
   /*row 1*/
   /*row2*/
@@ -577,277 +823,412 @@ body.create {
   /*row4*/
   /*row5*/
 }
-.container.share .position2 .avatar.big,
-.container.share .position2 .avatar.small {
+body.share .container .position2 .avatar.big,
+body.share .container .position2 .avatar.small {
   width: 46px;
   height: 46px;
   margin-left: -23px;
 }
-.container.share .position2 .added img {
-  margin-left: -23px !important;
-}
-.container.share .position2 #ava_4 {
+body.share .container .position2 #ava_4 {
   left: 10%;
   top: 30px;
 }
-.container.share .position2 #ava_5 {
+body.share .container .position2 #ava_5 {
   left: 30%;
   top: 30px;
 }
-.container.share .position2 #ava_6 {
+body.share .container .position2 #ava_6 {
   left: 50%;
   top: 30px;
 }
-.container.share .position2 #ava_7 {
+body.share .container .position2 #ava_7 {
   left: 70%;
   top: 30px;
 }
-.container.share .position2 #ava_8 {
+body.share .container .position2 #ava_8 {
   left: 90%;
   top: 30px;
 }
-.container.share .position2 #ava_9 {
+body.share .container .position2 #ava_9 {
   left: 10%;
   top: 80px;
 }
-.container.share .position2 #ava_10 {
+body.share .container .position2 #ava_10 {
   left: 30%;
   top: 80px;
 }
-.container.share .position2 #ava_11 {
+body.share .container .position2 #ava_11 {
   left: 50%;
   top: 80px;
 }
-.container.share .position2 #ava_12 {
+body.share .container .position2 #ava_12 {
   left: 70%;
   top: 80px;
 }
-.container.share .position2 #ava_13 {
+body.share .container .position2 #ava_13 {
   left: 90%;
   top: 80px;
 }
-.container.share .position2 #ava_14 {
+body.share .container .position2 #ava_14 {
   left: 10%;
   top: 130px;
 }
-.container.share .position2 #ava_1 {
+body.share .container .position2 #ava_2 {
   left: 30%;
   top: 130px;
 }
-.container.share .position2 #ava_2 {
+body.share .container .position2 #ava_1 {
   left: 50%;
   top: 130px;
 }
-.container.share .position2 #ava_3 {
+body.share .container .position2 #ava_3 {
   left: 70%;
   top: 130px;
 }
-.container.share .position2 #ava_15 {
+body.share .container .position2 #ava_15 {
   left: 90%;
   top: 130px;
 }
-.container.share .position2 #ava_16 {
+body.share .container .position2 #ava_16 {
   left: 10%;
   top: 180px;
 }
-.container.share .position2 #ava_17 {
+body.share .container .position2 #ava_17 {
   left: 30%;
   top: 180px;
 }
-.container.share .position2 #ava_18 {
+body.share .container .position2 #ava_18 {
   left: 50%;
   top: 180px;
 }
-.container.share .position2 #ava_19 {
+body.share .container .position2 #ava_19 {
   left: 70%;
   top: 180px;
 }
-.container.share .position2 #ava_20 {
+body.share .container .position2 #ava_20 {
   left: 90%;
   top: 180px;
 }
-.container.share .position2 #ava_21 {
+body.share .container .position2 #ava_21 {
   left: 10%;
   top: 230px;
 }
-.container.share .position2 #ava_22 {
+body.share .container .position2 #ava_22 {
   left: 30%;
   top: 230px;
 }
-.container.share .position2 #ava_23 {
+body.share .container .position2 #ava_23 {
   left: 50%;
   top: 230px;
 }
-.container.share .position2 #ava_24 {
+body.share .container .position2 #ava_24 {
+  /*opacity:1;*/
+  left: 70%;
+  top: 230px;
+}
+body.share .container .position2 #ava_25 {
+  /*opacity:1;*/
+  left: 90%;
+  top: 230px;
+}
+#black_hole {
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+  opacity: 0;
+  top: -60%;
+  -webkit-animation: rotate 60s infinite ease-in-out;
+          animation: rotate 60s infinite ease-in-out;
+}
+#black_hole img {
+  width: 100%;
+}
+/*
+                .                                
+   ___  , __   _/_     ___  .___  ` , __     ___.
+ .'   ` |'  `.  |    .'   ` /   \ | |'  `. .'   `
+ |----' |    |  |    |----' |   ' | |    | |    |
+ `.___, /    |  \__/ `.___, /     / /    |  `---|
+                                            \___/
+
+*/
+body.share.entering {
+  /*没有新人加入*/
+  /*发起人class=host视图*/
+  /*被邀请人视图*/
+  /*
+  .                                       
+  |     ___    ___  _   __ ` , __     ___.
+  |   .'   `  /   ` |   /  | |'  `. .'   `
+  |   |----' |    | `  /   | |    | |    |
+ /\__ `.___, `.__/|  \/    / /    |  `---|
+                                     \___/
+
+*/
+  /*解锁后飞出， host和guest视图相同的部分*/
+}
+body.share.entering #black_hole {
+  top: -30%;
   opacity: 1;
-  left: 70%;
-  top: 230px;
+  -webkit-transition: all 3s;
+          transition: all 3s;
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
+  -webkit-animation: rotate 60s infinite ease-in-out;
+          animation: rotate 60s infinite ease-in-out;
 }
-.container.share .position2 #ava_25 {
-  opacity: 1;
-  left: 90%;
-  top: 230px;
+body.share.entering #start_notice h1,
+body.share.entering #start_notice h2 {
+  position: relative;
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
 }
-.container.share.entering #share_notice {
-  opacity: 1;
-  /*transition:all 2s;*/
-  top: 0;
-  -webkit-transform: scale(1) translate(0, 0);
-      -ms-transform: scale(1) translate(0, 0);
-          transform: scale(1) translate(0, 0);
-  -webkit-transition: -webkit-transform 2s, opacity 1s;
-          transition: transform 2s, opacity 1s;
+body.share.entering #start_notice h1 {
+  -webkit-animation: fade-in-out 7s 4s 1;
+          animation: fade-in-out 7s 4s 1;
 }
-.container.share.entering #avatars_container {
+body.share.entering #start_notice h2 {
+  -webkit-animation: fade-in-out 7s 7s 1;
+          animation: fade-in-out 7s 7s 1;
+}
+body.share.entering #avatars_container {
   opacity: 1 !important;
   /*transition:all 2s;*/
   top: 40%;
-  -webkit-transform: scale(1) translate(0, 0);
-      -ms-transform: scale(1) translate(0, 0);
-          transform: scale(1) translate(0, 0);
-  -webkit-transition: -webkit-transform 2s, opacity 1s;
-          transition: transform 2s, opacity 1s;
-  -webkit-transition-delay: 0.5s;
-          transition-delay: 0.5s;
 }
-.container.share.entering #ava_1,
-.container.share.entering #ava_5,
-.container.share.entering #ava_8 #ava_10,
-.container.share.entering #ava_17,
-.container.share.entering #ava_22 {
-  -webkit-animation-name: floating1;
-          animation-name: floating1;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
+body.share.entering #avatars_container .avatar {
+  opacity: 0;
+  -webkit-transform: scale(0.4);
+      -ms-transform: scale(0.4);
+          transform: scale(0.4);
 }
-.container.share.entering #ava_2,
-.container.share.entering #ava_6,
-.container.share.entering #ava_12,
-.container.share.entering #ava_16,
-.container.share.entering #ava_18,
-.container.share.entering #ava_20 {
-  -webkit-animation-name: floating2;
-          animation-name: floating2;
-  -webkit-animation-duration: 1.5s;
-          animation-duration: 1.5s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
+body.share.entering #avatars_container #ava_1 {
+  -webkit-animation: floating1 3s 5.5s infinite;
+          animation: floating1 3s 5.5s infinite;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
 }
-.container.share.entering #ava_4,
-.container.share.entering #ava_7,
-.container.share.entering #ava_9,
-.container.share.entering #ava_11,
-.container.share.entering #ava_14,
-.container.share.entering #ava_19,
-.container.share.entering #ava_23,
-.container.share.entering #ava_25 {
-  -webkit-animation-name: floating3;
-          animation-name: floating3;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
+body.share.entering #avatars_container #ava_2,
+body.share.entering #avatars_container #ava_5,
+body.share.entering #avatars_container #ava_8,
+body.share.entering #avatars_container #ava_9,
+body.share.entering #avatars_container #ava_17,
+body.share.entering #avatars_container #ava_22 {
+  -webkit-animation: avatar_fadein 3s 12s 1 forwards, floating1 3s 12s infinite;
+          animation: avatar_fadein 3s 12s 1 forwards, floating1 3s 12s infinite;
 }
-.container.share.entering #ava_3,
-.container.share.entering #ava_13,
-.container.share.entering #ava_15,
-.container.share.entering #ava_19,
-.container.share.entering #ava_21,
-.container.share.entering #ava_24 {
-  -webkit-animation-name: floating4;
-          animation-name: floating4;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
+body.share.entering #avatars_container #ava_3,
+body.share.entering #avatars_container #ava_6,
+body.share.entering #avatars_container #ava_12,
+body.share.entering #avatars_container #ava_16,
+body.share.entering #avatars_container #ava_18,
+body.share.entering #avatars_container #ava_20 {
+  -webkit-animation: avatar_fadein 3s 13.5s 1 forwards, floating2 2s 13.5s infinite;
+          animation: avatar_fadein 3s 13.5s 1 forwards, floating2 2s 13.5s infinite;
 }
-.container.share #ava_2,
-.container.share #ava_3 {
-  /*text-align: center;*/
+body.share.entering #avatars_container #ava_4,
+body.share.entering #avatars_container #ava_7,
+body.share.entering #avatars_container #ava_10,
+body.share.entering #avatars_container #ava_11,
+body.share.entering #avatars_container #ava_14,
+body.share.entering #avatars_container #ava_19,
+body.share.entering #avatars_container #ava_23,
+body.share.entering #avatars_container #ava_25 {
+  -webkit-box-shadow: 0 0 10px #00c6ff;
+          box-shadow: 0 0 10px #00c6ff;
+  -webkit-animation: avatar_fadein 3s 15s 1 forwards, floating3 2.5s 15s infinite;
+          animation: avatar_fadein 3s 15s 1 forwards, floating3 2.5s 15s infinite;
 }
-.container.share #ava_2 img,
-.container.share #ava_3 img {
-  position: absolute;
-  width: 0;
-  top: 33px;
+body.share.entering #avatars_container #ava_13,
+body.share.entering #avatars_container #ava_15,
+body.share.entering #avatars_container #ava_19,
+body.share.entering #avatars_container #ava_21,
+body.share.entering #avatars_container #ava_24 {
+  -webkit-animation: avatar_fadein 3s 16s 1 forwards, floating4 2s 16s infinite;
+          animation: avatar_fadein 3s 16s 1 forwards, floating4 2s 16s infinite;
+}
+body.share.entering #avatars_container #ava_1 {
+  opacity: 1;
   left: 50%;
-  margin-left: 0;
-  -webkit-transition: all 1.5s;
-          transition: all 1.5s;
+  -webkit-animation: box_shine 6s 9s 1 forwards;
+          animation: box_shine 6s 9s 1 forwards;
 }
-.container.share #ava_2.added img,
-.container.share #ava_3.added img {
-  width: 100%;
-  top: 0;
-  margin-left: -33px;
+body.share.entering #avatars_container #ava_1 .flip_avatar {
+  -webkit-animation: flipping 8s 2s 1 forwards;
+          animation: flipping 8s 2s 1 forwards;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
 }
-.container.share.leaving #share_notice {
-  top: -100%;
+body.share.entering #ava_2 img,
+body.share.entering #ava_3 img {
+  display: none;
+}
+body.share.entering.host {
+  /*host  看到第2个人加入*/
+  /*host 看到第3个人加入并解锁*/
+}
+body.share.entering.host #share_notice h1,
+body.share.entering.host #share_notice h2 {
+  position: relative;
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
+}
+body.share.entering.host #share_notice h1 {
+  -webkit-animation: fade-in 4s 12s 1 forwards;
+          animation: fade-in 4s 12s 1 forwards;
+}
+body.share.entering.host #share_notice h2 {
+  -webkit-animation: fade-in 4s 12s 1 forwards;
+          animation: fade-in 4s 12s 1 forwards;
+}
+body.share.entering.host #share_notice strong {
+  color: #079fd1;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #2a2d32;
+}
+body.share.entering.host #share_notice img {
+  -webkit-animation: arrow_up 2s 15s 1 forwards;
+          animation: arrow_up 2s 15s 1 forwards;
+}
+body.share.entering.host.host.add_one #start_notice {
+  display: none;
+}
+body.share.entering.host.host.add_one #ava_2 {
+  background: none;
+}
+body.share.entering.host.host.add_one #ava_2 img {
+  display: block;
+}
+body.share.entering.host.host.add_one #ava_2 .flip_avatar {
+  -webkit-animation: flipping 4s 1 forwards ease-in-out;
+          animation: flipping 4s 1 forwards ease-in-out;
+}
+body.share.entering.host.host.leaving #ava_3 {
+  background: none;
+}
+body.share.entering.host.host.leaving #ava_3 img {
+  display: block;
+}
+body.share.entering.host.host.leaving #ava_3 .flip_avatar {
+  -webkit-animation: flipping 4s 1 forwards ease-in-out;
+          animation: flipping 4s 1 forwards ease-in-out;
+}
+body.share.entering.guest {
+  /*人满，两个一起flip, 然后解锁*/
+}
+body.share.entering.guest #guest_notice h1,
+body.share.entering.guest #guest_notice h2 {
+  -webkit-animation: fade-in 2s 11s 1 forwards;
+          animation: fade-in 2s 11s 1 forwards;
+}
+body.share.entering.guest.leaving #ava_2,
+body.share.entering.guest.leaving #ava_3 {
+  background: none;
+}
+body.share.entering.guest.leaving #ava_2 img,
+body.share.entering.guest.leaving #ava_3 img {
+  display: block;
+}
+body.share.entering.guest.leaving #ava_2 .flip_avatar,
+body.share.entering.guest.leaving #ava_3 .flip_avatar {
+  -webkit-animation: flipping 4s 1 forwards ease-in-out;
+          animation: flipping 4s 1 forwards ease-in-out;
+}
+body.share.entering.leaving #full_notice {
+  -webkit-animation: notice_fadeout 1.5s 4.5s 1 forwards;
+          animation: notice_fadeout 1.5s 4.5s 1 forwards;
+}
+body.share.entering.leaving #full_notice h1,
+body.share.entering.leaving #full_notice h2 {
+  -webkit-animation: fade-in 2s 1 forwards;
+          animation: fade-in 2s 1 forwards;
+}
+body.share.entering.leaving #black_hole {
   opacity: 0;
-  -webkit-transition: all 2s;
-          transition: all 2s;
-  -webkit-transition-delay: 0.5s;
-          transition-delay: 0.5s;
+  -webkit-transition: opacity 1s;
+          transition: opacity 1s;
+  -webkit-transition-delay: 6s;
+          transition-delay: 6s;
 }
-.container.share.leaving #avatars_container {
-  top: -100%;
-  opacity: 0;
-  /*transition-delay: 3s;*/
-  -webkit-transition: all 2s;
-          transition: all 2s;
-  /*transition-delay: 2s;*/
+body.share.entering.leaving #share_notice,
+body.share.entering.leaving #guest_notice {
+  -webkit-animation: notice_fadeout 1.5s 1 forwards;
+          animation: notice_fadeout 1.5s 1 forwards;
 }
-.container.share.leaving #avatars_container .avatar {
-  transition-delay: 4s;
-  -webkit-transition-delay: 4s;
+body.share.entering.leaving #avatars_container {
+  -webkit-animation: avatar_leave 2s 4.5s 1 forwards ease-in !important;
+          animation: avatar_leave 2s 4.5s 1 forwards ease-in !important;
 }
-.container.share.leaving #avatars_container #ava_22,
-.container.share.leaving #avatars_container #ava_9,
-.container.share.leaving #avatars_container #ava_19,
-.container.share.leaving #avatars_container #ava_8,
-.container.share.leaving #avatars_container #ava_14,
-.container.share.leaving #avatars_container #ava_15,
-.container.share.leaving #avatars_container #ava_6,
-.container.share.leaving #avatars_container #ava_18 {
-  top: -100% !important;
-  -webkit-transition: top 4s;
-          transition: top 4s;
-  /*transition-delay: 2s;*/
+body.share.entering.leaving #avatars_container .avatar {
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  -webkit-transition: all 1.5s ease-in;
+          transition: all 1.5s ease-in;
 }
-.container.share.leaving #avatars_container #ava_11,
-.container.share.leaving #avatars_container #ava_1,
-.container.share.leaving #avatars_container #ava_8,
-.container.share.leaving #avatars_container #ava_2,
-.container.share.leaving #avatars_container #ava_6,
-.container.share.leaving #avatars_container #ava_7 {
-  top: -100% !important;
-  -webkit-transition: top 4.6s;
-          transition: top 4.6s;
-  /*transition-delay: 2.5s;*/
+body.share.entering.leaving #avatars_container #ava_1,
+body.share.entering.leaving #avatars_container #ava_5,
+body.share.entering.leaving #avatars_container #ava_6,
+body.share.entering.leaving #avatars_container #ava_9,
+body.share.entering.leaving #avatars_container #ava_10,
+body.share.entering.leaving #avatars_container #ava_13,
+body.share.entering.leaving #avatars_container #ava_14,
+body.share.entering.leaving #avatars_container #ava_16,
+body.share.entering.leaving #avatars_container #ava_19,
+body.share.entering.leaving #avatars_container #ava_22 {
+  -webkit-transition-delay: 4.5s;
+          transition-delay: 4.5s;
 }
-.container.share.leaving #avatars_container #ava_2,
-.container.share.leaving #avatars_container #ava_21,
-.container.share.leaving #avatars_container #ava_10,
-.container.share.leaving #avatars_container #ava_3,
-.container.share.leaving #avatars_container #ava_4,
-.container.share.leaving #avatars_container #ava_17,
-.container.share.leaving #avatars_container #ava_7 {
-  top: -100% !important;
-  -webkit-transition: top 4.7s;
-          transition: top 4.7s;
-  /*transition-delay: 3s;*/
+body.share.entering.leaving #avatars_container #ava_11,
+body.share.entering.leaving #avatars_container #ava_25,
+body.share.entering.leaving #avatars_container #ava_2,
+body.share.entering.leaving #avatars_container #ava_15,
+body.share.entering.leaving #avatars_container #ava_8,
+body.share.entering.leaving #avatars_container #ava_7 {
+  -webkit-transition-delay: 5s;
+          transition-delay: 5s;
+}
+body.share.entering.leaving #avatars_container #ava_12,
+body.share.entering.leaving #avatars_container #ava_20,
+body.share.entering.leaving #avatars_container #ava_24,
+body.share.entering.leaving #avatars_container #ava_3,
+body.share.entering.leaving #avatars_container #ava_4,
+body.share.entering.leaving #avatars_container #ava_18 {
+  -webkit-transition-delay: 5.5s;
+          transition-delay: 5.5s;
+}
+body.share.entering.leaving #avatars_container #ava_21,
+body.share.entering.leaving #avatars_container #ava_23,
+body.share.entering.leaving #avatars_container #ava_13,
+body.share.entering.leaving #avatars_container #ava_17 {
+  -webkit-transition-delay: 6.5s;
+          transition-delay: 6.5s;
 }
 /* ==========================================================================
-   FOLLOW
+
+    ####### ####### #       #       ####### #     # 
+    #       #     # #       #       #     # #  #  # 
+    #       #     # #       #       #     # #  #  # 
+    #####   #     # #       #       #     # #  #  # 
+    #       #     # #       #       #     # #  #  # 
+    #       #     # #       #       #     # #  #  # 
+    #       ####### ####### ####### #######  ## ##  
+   
    ========================================================================== */
-.follow ul {
+body.follow {
+  background: url('../img/blackhole2.jpg') no-repeat center -220px #0b121b;
+  -webkit-background-size: 100% auto;
+          background-size: 100% auto;
+}
+body.follow ul {
   width: 13em;
   margin: 0 auto;
   font-size: 1.2em;
 }
-.follow ul .box {
+body.follow ul .box {
   border-radius: 4px;
   width: 1.4em;
   height: 1.4em;
@@ -859,13 +1240,21 @@ body.create {
   position: relative;
   top: 0.4em;
 }
-.follow .foxhole {
+body.follow .foxhole {
   width: 62px;
   display: block;
   margin: 2em auto;
 }
 /* ==========================================================================
-   LIST view 2 pages
+
+    #       ###  #####  ####### 
+    #        #  #     #    #    
+    #        #  #          #    
+    #        #   #####     #    
+    #        #        #    #    
+    #        #  #     #    #    
+    ####### ###  #####     #    
+                            
    ========================================================================== */
 .top_ad {
   position: fixed;
@@ -874,23 +1263,65 @@ body.create {
   width: 100%;
   height: 44px;
   text-align: center;
-  background: #e9ecf1;
+  line-height: 44px;
   /*chat page*/
   /*顶部关注按钮*/
 }
-.top_ad.right_logo {
+.top_ad .face {
+  width: 100%;
+  height: 44px;
+}
+.top_ad .right_logo {
   background: #e9ecf1 url('../img/logo-fox@2x.png') right no-repeat;
   -webkit-background-size: auto 44px;
           background-size: auto 44px;
 }
-.top_ad p {
-  margin: 0;
-  line-height: 44px;
+.top_ad .group_info {
+  background: #2a2d32;
+  color: white;
+  padding: 0 1em;
+}
+.top_ad .group_info .name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 80%;
+  display: inline-block;
+}
+.top_ad .group_info .number {
+  float: right;
 }
 .top_ad.follow button {
   border: 0;
   padding: 0.3em 0.4em;
   margin-right: 0.4em;
+}
+/*带翻转效果的顶部条*/
+.top_ad.cube_view {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform 1s;
+          transition: transform 1s;
+}
+.top_ad.cube_view .face {
+  position: absolute;
+  top: 0;
+}
+.top_ad.cube_view .face1 {
+  -webkit-transform: translateZ(22px);
+          transform: translateZ(22px);
+}
+.top_ad.cube_view .face2 {
+  -webkit-transform: rotateX(-90deg) translateZ(22px);
+          transform: rotateX(-90deg) translateZ(22px);
+}
+.top_ad.cube_view.show_face1 {
+  -webkit-transform: translateZ(-22px);
+          transform: translateZ(-22px);
+}
+.top_ad.cube_view.show_face2 {
+  -webkit-transform: translateZ(-22px) rotateX(90deg);
+          transform: translateZ(-22px) rotateX(90deg);
 }
 .bottom_ad {
   position: fixed;
@@ -936,7 +1367,7 @@ body.create {
   color: #079fd1;
 }
 .top_tabs .tab.inactive {
-  background-color: #30343d;
+  background-color: ##30343d;
   color: #696c70;
 }
 .top_tabs .tab span {
@@ -968,8 +1399,9 @@ body.create {
   background-image: url('../img/icon-star-blue.png');
 }
 .top_tabs + .container {
-  margin-top: 41px;
-  /*padding:0.8em 0;*/
+  margin: 41px 0 44px 0;
+  /*tabs高度41px*/
+  /*底部广告条的高度44px*/
 }
 .tab_list {
   width: 100%;
@@ -996,8 +1428,34 @@ body.create {
 }
 .list_view {
   color: white;
-  margin: 0 0 44px 0;
-  /*底部广告条的高度*/
+}
+.list_view .container {
+  margin-left: 0;
+  margin-right: 0;
+}
+.list_view .no_item li {
+  height: auto;
+  background: none;
+  text-align: center;
+  padding: 2em;
+  color: #bbb;
+}
+.list_view .no_item li:active {
+  background: none;
+}
+.list_view .no_item .main {
+  font-size: 1.3em;
+  margin-bottom: 2em;
+}
+.list_view .no_item a {
+  color: #079fd1;
+  border: 1px solid #079fd1;
+  border-radius: 4px;
+  padding: 0.4em 1em;
+  display: inline-block;
+}
+.list_view .no_item a:active {
+  background: #2a2d32;
 }
 .list_view li {
   position: relative;
@@ -1007,6 +1465,9 @@ body.create {
   margin: 0 0 1px 0;
   overflow: hidden;
   /*border-radius: 4px;*/
+}
+.list_view li:active {
+  background: #30333a;
 }
 .list_view li .group_info {
   padding: 1em;
@@ -1062,14 +1523,21 @@ body.create {
   background-color: #045f7d;
 }
 /* ==========================================================================
-   CHAT
+
+     #####  #     #    #    ####### 
+    #     # #     #   # #      #    
+    #       #     #  #   #     #    
+    #       ####### #     #    #    
+    #       #     # #######    #    
+    #     # #     # #     #    #    
+     #####  #     # #     #    #    
+                               
    ========================================================================== */
 .chat_view {
   margin: 0 0.6em 80px ;
   /*底部输入的高度 + 20px*/
   padding-top: 0 !important;
   overflow: auto;
-  /*@border:2px;*/
 }
 .chat_view .datetime {
   text-align: center;
@@ -1090,18 +1558,13 @@ body.create {
   background-color: #303339;
   position: absolute;
   margin-top: 4px;
-  /*top:-@border;*/
 }
 .chat_view .avatar img {
   width: 30px;
-  /*margin:@border;*/
 }
 .chat_view .content {
   color: white;
-  /*margin:0 @avatar/2;*/
-  /*display: inline-block;*/
   border-radius: 2px;
-  /*width:100%;*/
   margin: 0 40px;
   background: #2a2d32;
   padding: 0.6em 1.2em;
@@ -1109,17 +1572,10 @@ body.create {
 .chat_view .left .avatar {
   left: 0;
 }
-.chat_view .left .content {
-  /*margin-left:10%;*/
-}
 .chat_view .right .avatar {
   right: 0;
 }
 .chat_view .right .content {
-  /*background: #525761;*/
-  /*float:right;*/
-  /*padding:0.6em 1.4em;*/
-  /*text-align: right;*/
   overflow: auto;
   color: #079fd1;
 }
@@ -1129,6 +1585,7 @@ body.create {
 .chat_input {
   position: fixed;
   bottom: 0;
+  z-index: 19999;
   background: #2a2d32;
   width: 100%;
   border-top: 1px solid #40454e;
@@ -1167,7 +1624,6 @@ body.create {
 }
 .chat_input .join_group {
   padding: 0.4em 2.4em;
-  /*font-size: 1.2em;*/
   float: right;
 }
 .chat_input .notice_full {
@@ -1175,8 +1631,66 @@ body.create {
   float: right;
   padding: 0.4em;
 }
+#top_msg {
+  color: white;
+  position: fixed;
+  z-index: 20000;
+  background: rgba(0, 191, 255, 0.8);
+  right: -200px;
+  top: 50px;
+  font-size: 0.8em;
+  padding-right: 0.6em;
+  padding-left: 1em;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 2em 0 0 2em;
+  -webkit-box-shadow: 0 2px 0 #2a2d32;
+          box-shadow: 0 2px 0 #2a2d32;
+  -webkit-transition: right 1s;
+          transition: right 1s;
+}
+#top_msg.active {
+  right: 0;
+}
+#bottom_msg {
+  color: white;
+  position: fixed;
+  z-index: 5;
+  background: rgba(0, 191, 255, 0.8);
+  width: 100%;
+  font-size: 0.9em;
+  text-align: center;
+  height: 40px;
+  line-height: 38px;
+  -webkit-box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.1);
+  bottom: -50px;
+  -webkit-transition: bottom 1s;
+          transition: bottom 1s;
+}
+#bottom_msg .close {
+  float: right;
+  padding: 0 10px;
+  font-size: 1.4em;
+  color: #2a2d32;
+  line-height: 36px;
+}
+#bottom_msg:active {
+  background: #045f7d;
+}
+#bottom_msg.active {
+  bottom: 50px;
+}
 /* ==========================================================================
-   MISC
+   
+    #     # ###  #####   #####  
+    ##   ##  #  #     # #     # 
+    # # # #  #  #       #       
+    #  #  #  #   #####  #       
+    #     #  #        # #       
+    #     #  #  #     # #     # 
+    #     # ###  #####   #####  
+                            
    ========================================================================== */
 .overlay {
   position: fixed;
@@ -1199,14 +1713,12 @@ body.create {
 #alert a {
   color: #079fd1;
   display: block;
-  /*float:right;*/
   width: 100%;
   text-align: center;
   padding: 1em 0;
-  /*border:1px solid @main_blue;*/
 }
 #loading {
-  display: none;
+  /*display:none;*/
   top: 50%;
   margin-top: -100px;
   width: 120px;

@@ -4,20 +4,27 @@
 @import "animation.less";
 
 @main_grey: #40454e;
+@main_grey2: #282b33;
+@sub_grey:##30343d;
 @dark_grey: #2a2d32;
 @dark_grey_active: #353940;
 @main_blue: #079fd1;
+@main_blue_a08:rgba(0 ,191,255,0.8);
 @main_blue_active: #045f7d;
+@dark_blue:#0b121b;
 @grey_text: #ccc;
 @pink: #f46a66;
 
 @yellow:#fedd02;
 
+@shine:rgba(0,198,255,1);
+
+
 html {
     font-size: 1em;
     line-height: 1.4;
 
-    font-family:"Hiragino Sans GB W3", "Microsoft YaHei", sans-serif;
+    font-family:"Hiragino Sans GB", "Microsoft YaHei", sans-serif;
     font-weight: normal;
 
 
@@ -28,15 +35,7 @@ body{
     background: @main_grey;
 }
 
-body.share{
-    background:#282b33;
-    overflow: hidden;
-}
 
-html, body{
-        /*overflow:hidden;*/
-
-}
 
 div,input,ul, li{
     box-sizing: border-box;
@@ -66,10 +65,10 @@ input:focus{
 
 .blue_btn{
     background-color: @main_blue;
-    border-radius: 2px;
+    border-radius: 4px;
     color:white;
     border:@main_blue;
-
+    box-shadow: 0 2px 0 @main_grey;
     &:active{
         background-color: @main_blue_active;
     }
@@ -101,39 +100,35 @@ a{
 
 
 /* ==========================================================================
-    create group
+     #####  ######  #######    #    ####### ####### 
+    #     # #     # #         # #      #    #       
+    #       #     # #        #   #     #    #       
+    #       ######  #####   #     #    #    #####   
+    #       #   #   #       #######    #    #       
+    #     # #    #  #       #     #    #    #       
+     #####  #     # ####### #     #    #    ####### 
+                                                
    ========================================================================== */
 body.create{
-    background:#fafafa;
+    background-color:#fafafa;
 
 }
-.create.submitted{
+body.submitted{
        
-  
+    background-color:@dark_blue;
+    transition:background-color 3s;
+
+
     #create_group{
-       
-        input[type="text"]{
-             animation-name:             hole; 
-            animation-duration:         4s; 
-            animation-iteration-count:  1;
-            animation-fill-mode: forwards;
-            animation-delay: 0.5s;
-
-            transition-timing-function: ease-in;
-        }
-       
-
-        .notice, .checkbox, input[type="submit"]{
-            opacity:0;
+       opacity:0;
             transition: opacity 1.5s;
-        }
     }
 }
 #create_group{
-    margin:2.4em 0 3em 0;
+    margin:1.4em 0 3em 0;
    
     input[type="text"]{
-        background:#282b33;
+        background:@main_grey2;
         width:100%;
         padding: 0.8em;
         font-size:1.2em;
@@ -145,10 +140,8 @@ body.create{
     }
 
     .checkbox{
-        /*float: left;*/
-        /*width:60%;*/
         color: #2a2d32;
-        margin-top:1.8em;
+        margin-top:1.3em;
         font-size:1.2em;
         display: inline-block;
         input{
@@ -163,34 +156,38 @@ body.create{
             border-radius:2px;
             background-color: #282b33;
             float:left;
+
+            img{
+                width:22px;
+                
+                display: none;
+            }
         }
 
         input:checked +label {
-            color:@main_blue;
             div.box{
-                background: #282b33 url('../img/check.png') no-repeat center;
-                background-size:16px 16px;
+               img{
+                display: block;
+               }
             }
         }
 
     }
-
   
-        input[type="submit"]{
-            float:right;
-            padding:0.8em 1.2em;
-            font-size:1.2em; 
-            
-            width:6em;
-            margin-top:1.4em;
-
-            &.disable{
-                background:#666;
-                color:#aaa;
-            }
-        }
+    input[type="submit"]{
+        float:right;
+        padding:0.8em 1.2em;
+        font-size:1.2em; 
         
-    
+        width:6em;
+        margin-top:1.4em;
+
+        &.disable{
+            background:#666;
+            color:#aaa;
+        }
+    }
+        
 }
 
 .notice{
@@ -198,12 +195,12 @@ body.create{
     width:100%;
     color: #454a52;
     border-radius:4px;
-    padding:0.4em 1em;
+    padding:6px 10px;
     margin-top:0.2em;
   
     p {
         line-height: 1.4;
-        font-size: 0.9em;
+        font-size: 12px;
         margin:0;
        
     }
@@ -211,606 +208,793 @@ body.create{
 }
 
 /* ==========================================================================
-   SHARE
+     #####  #     #    #    ######  ####### 
+    #     # #     #   # #   #     # #       
+    #       #     #  #   #  #     # #       
+     #####  ####### #     # ######  #####   
+          # #     # ####### #   #   #       
+    #     # #     # #     # #    #  #       
+     #####  #     # #     # #     # ####### 
    ========================================================================== */
 
-.share{
-    color:white;
-    width:100%;
-    overflow-x:hidden;
+body.share{
+    background-color:  @dark_blue;
+    overflow: hidden;
 
-    #arrow{
-        width:50%;
-        float:right;
-        margin-top:10px;
-    }
-    h1{
-        font-size: 1.5em;
-        clear:both;
-        text-align: center;
-        font-weight: normal;
-    }
 
-    h2{
-        font-size: 1.3em;
-        text-align: center;
-        font-weight: normal;
-    }
-    strong{
-        padding:0 1px;
-        font-weight: normal;
-    }
-}
-/*#share_avatars{
-    background:url('../img/share_bg.png') no-repeat center;
-    background-size:160px auto;
-   
-    width:160px;
-    height:166px;
-    margin:0 auto;
-
-    position: relative;
-
-     @avatar: 60px;
-
-    .avatar{
-        width:@avatar;
-        height:@avatar;
-        border-radius:50%;
-        background-color: #303339;
-        position: absolute;
-        
-        img{
-            width:@avatar;
-        }
-
-        &.first{
-            top:49px;
-            left:3px;
-        }
-
-        &.second{
-            top:3px;
-            left:97px;
-        }
-
-        &.third{
-            top:103px;
-            left:97px;
-        }
-    }
-
-}
-*/
-.container.share{
-    padding:0;
-    margin:0;
-    height:100%;
-    #share_notice{
-        opacity:0;
-        position: absolute;
-        top:0;
-        width:100%;
-       
-        transform: scale(0) translate(0, 450px);
-        
-    }
-
-    /*general avatar styles*/
-
-    #avatars_container{
-        position: absolute;
-        top:40%;
-        width:420px;
-        height:400px;
-        margin:0 auto;
-        left:50%;
-        margin-left:-210px;
-
-        opacity:0;
+    .container{
+        padding:0;
+        margin:0;
+        height:100%;
         overflow: initial;
-        transform: scale(0) translate(0, -450px);
-        
+        color:white;
+        width:100%;
+        overflow-x:hidden;
 
-    }
-    .avatar{
-        
-        background:url('../img/avatar_unknown.png') no-repeat center;
-        background-size: 100%;
-        position: absolute;
-        z-index: 1000;
-
-        width:46px;
-        height:46px;
-        margin-left:-23px;
-
-        /*position animation*/
-    transition:top 1s , left 1s , width 0.5s , height 0.5s , opacity 1s, margin-left 0.5s;
-
-
-        span{
-            display: none;
+        #arrow{
+            width:50%;
+            float:right;
+            margin-top:10px;
         }
-        &.big{
-            width:66px;
-            height:66px;
-            margin-left:-33px;
-        }
-
-        &.small{
-            width:30px;
-            height:30px;
-            margin-left:-15px;
-        }
-        img{
-            width:100%;
-            transition:margin-left 1s;
-        }
-    }
-
-
-    /*我*/
-
-    #ava_1{
-        z-index: 2000;
-         span{
-            display: block;
-            width:100%;
+        h1{
+            font-size: 1.5em;
+            clear:both;
             text-align: center;
+            font-weight: normal;
+        }
+
+        h2{
+            font-size: 1.3em;
+            text-align: center;
+            font-weight: normal;
+        }
+        strong{
+            padding:0 1px;
+            font-weight: normal;
+        }
+
+
+        .notice_box{
             position: absolute;
-            top:-23px;
-            color:white;
-        }
-    }
-    /*朋友1*/
-    #ava_2{
-        z-index: 1999;
+            width: 100%;
+            z-index: 999;
 
-    }
-    /*朋友2*/
-    #ava_3{
-        z-index: 1998;
-
-    }
-
-    /****************
-    default positions
-    *****************/
-
-    .position1{
-        #ava_1{
-            left:33%;
-            top:90px;
         }
 
-        #ava_2{
-            left:65%;
-            top:80px;
-        }
-
-        #ava_3{
-            left:50%;
-            top:140px;
-        }
-
-        #ava_4{
-            left:66%;
-            top:150px;
-        }
-
-        #ava_5{
-            left:82%;
-            top:120px;
-        }
-
-        #ava_6{
-            left:90%;
-            top:70px;
-        }
-        #ava_7{
-            left:99%;
-            top:110px;
-        }
-
-        #ava_8{
-            left:50%;
-            top:70px;
-        }
-        #ava_9{
-            left:22%;
-            top:60px;
-        }
-        #ava_10{
-            left:30%;
-            top:160px;
-        }
-
-        #ava_11{
-            left:8%;
-            top:80px;
-        }
-        #ava_12{
-            left:3%;
-            top:130px;
-        }
-
-
-        #ava_13{
-            left:60%;
+        #start_notice{
+           
             top:200px;
+            h1,h2{
+                opacity: 0;
+            }
+
+        }
+        #share_notice{
+            
+            top:0;
+            h1,h2,img{
+                opacity:0;
+            }
+        }
+        #full_notice{
+            top:150px;
+            h1,h2{
+                opacity: 0;
+            }
         }
 
-        #ava_14{
-            left:67%;
-            top:40px;
+        #guest_notice{
+            top:150px;
+            h1,h2{
+                opacity:0;
+            }
         }
 
-        #ava_15{
-            left:78%;
-            top:60px;
+
+
+        
+        /****************
+            AVATARS
+        *****************/
+
+        #avatars_container{
+            position: absolute;
+            top:40%;
+            width:420px;
+            height:400px;
+            margin:0 auto;
+            left:50%;
+            margin-left:-210px;
+            overflow: initial;
+
+            z-index:1000;
+
+        }
+        .avatar{
+            opacity:0;
+
+            background:url('../img/avatar_unknown2.png') no-repeat center;
+            background-size: 100%;
+            position: absolute;
+            z-index: 1000;
+
+            width:42px;
+            height:42px;
+            margin-left:-21px;
+
+            border-radius: 50%;
+            overflow: hidden;
+            transition:top 1s , left 1s , width 0.5s , height 0.5s , opacity 1s, margin-left 0.5s;
+
+
+            span{
+                display: none;
+            }
+            &.big{
+                width:66px;
+                height:66px;
+                margin-left:-33px;
+            }
+
+            &.small{
+                width:24px;
+                height:24px;
+                margin-left:-11px;
+            }
+            img{
+                width:100%;
+                transition:margin-left 1s;
+            }
+            .flip_avatar{
+                height:100%;
+        
+                transform-style: preserve-3d;  /*flip animation*/
+                transition: all 0.2s ease-in-out;  /*flip animation*/
+
+            }
+            .side{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                backface-visibility: hidden;
+
+                border-radius: 50%;
+                overflow: hidden;
+                display: block;
+            }
+           
+            .side.back {
+                display: block;
+                transform: rotateY(180deg);
+                
+            }
         }
 
-        #ava_16{
-            left:98%;
-            top:50px;
+        /*我*/
+
+        #ava_1{
+            z-index: 2000;     
+            background-image:none;
+            span{
+                display: block;
+                width:100%;
+                text-align: center;
+                position: absolute;
+                top:-23px;
+                color:white;
+            }
+
         }
 
-        #ava_17{
-            left:77%;
-            top:176px;
+        /*朋友1*/
+        #ava_2{
+            z-index: 1999;
+            background-image:url('../img/avatar_unknown.png');
+
         }
 
-        #ava_18{
-            left:93%;
-            top:160px;
+        /*朋友2*/
+        #ava_3{
+            z-index: 1998;
+            background-image:url('../img/avatar_unknown.png');
+
         }
 
-        #ava_19{
-            left:38%;
-            top:50px;
+        .position1{
+            #ava_1{
+                left:50%;
+                top:60px;
+            }
+
+            #ava_2{
+                left:65%;
+                top:100px;
+            }
+
+            #ava_3{
+                left:40%;
+                top:120px;
+            }
+
+            #ava_4{
+                left:55%;
+                top:155px;
+            }
+
+            #ava_5{
+                left:82%;
+                top:120px;
+            }
+
+            #ava_6{
+                left:90%;
+                top:70px;
+            }
+            #ava_7{
+                left:99%;
+                top:110px;
+            }
+
+            #ava_8{
+                left:80%;
+                top:40px;
+            }
+            #ava_9{
+                left:22%;
+                top:60px;
+            }
+            #ava_10{
+                left:26%;
+                top:160px;
+            }
+
+            #ava_11{
+                left:8%;
+                top:80px;
+            }
+            #ava_12{
+                left:3%;
+                top:130px;
+            }
+
+
+            #ava_13{
+                left:66%;
+                top:190px;
+            }
+
+            #ava_14{
+                left:67%;
+                top:55px;
+            }
+
+            #ava_15{
+                left:74%;
+                top:80px;
+            }
+
+            #ava_16{
+                left:98%;
+                top:50px;
+            }
+
+            #ava_17{
+                left:77%;
+                top:176px;
+            }
+
+            #ava_18{
+                left:93%;
+                top:160px;
+            }
+
+            #ava_19{
+                left:38%;
+                top:50px;
+            }
+
+            #ava_20{
+                left:17%;
+                top:120px;
+            }
+
+            #ava_21{
+                left:15%;
+                top:160px;
+            }
+
+            #ava_22{
+                left:3%;
+                top:50px;
+            }
+
+            #ava_23{
+                left:40%;
+                top:190px;
+            }
+
+            #ava_24{
+                left:26%;
+                top:130px;
+            }
+            #ava_25{
+                left:33%;
+                top:90px;
+            }
+
         }
 
-        #ava_20{
-            left:17%;
-            top:120px;
-        }
+        .position2{
 
-        #ava_21{
-            left:15%;
-            top:160px;
-        }
+            /*所有头像大小相同*/
+            .avatar.big, .avatar.small{
+                width:46px;
+                height:46px;
+                margin-left:-23px;
+            }
 
-        #ava_22{
-            left:3%;
-            top:50px;
-        }
+            /*row 1*/
+            #ava_4{
+                left:10%;
+                top:30px;
+            }
 
-        #ava_23{
-            left:40%;
-            top:190px;
-        }
+            #ava_5{
+                left:30%;
+                top:30px;
+            }
 
-        #ava_24{
-            opacity: 0;
-              left:33%;
-            top:90px;
+            #ava_6{
+                left:50%;
+                top:30px;
+            }
+            #ava_7{
+                left:70%;
+                top:30px;
+            }
+
+            #ava_8{
+                left:90%;
+                top:30px;
+            }
+
+            /*row2*/
+            #ava_9{
+                left:10%;
+                top:80px;
+            }
+            #ava_10{
+                left:30%;
+                top:80px;
+            }
+
+            #ava_11{
+                left:50%;
+                top:80px;
+            }
+            #ava_12{
+                left:70%;
+                top:80px;
+            }
+
+
+            #ava_13{
+                left:90%;
+                top:80px;
+            }
+            /*row3*/
+            #ava_14{
+                left:10%;
+                top:130px;
+            }
+            #ava_2{
+                left:30%;
+                top:130px;
+            }
+            
+            #ava_1{
+                left:50%;
+                top:130px;
+            }
+
+            #ava_3{
+                left:70%;
+                top:130px;
+            }
+            #ava_15{
+                left:90%;
+                top:130px;
+            }
+
+            /*row4*/
+
+            #ava_16{
+                left:10%;
+                top:180px;
+            }
+
+            #ava_17{
+                left:30%;
+                top:180px;
+            }
+
+            #ava_18{
+                left:50%;
+                top:180px;
+            }
+
+            #ava_19{
+                left:70%;
+                top:180px;
+            }
+
+            #ava_20{
+                left:90%;
+                top:180px;
+            }
+
+            /*row5*/
+            #ava_21{
+                left:10%;
+                top:230px;
+            }
+
+            #ava_22{
+                left:30%;
+                top:230px;
+            }
+
+            #ava_23{
+                left:50%;
+                top:230px;
+            }
+
+            #ava_24{
+                /*opacity:1;*/
+                left:70%;
+                top:230px;
+            }
+
+            #ava_25{
+                /*opacity:1;*/
+                left:90%;
+                top:230px;
+            }
         }
-        #ava_25{
-            opacity: 0;
-              left:33%;
-            top:90px;
-        }
+    }
+}
+
+#black_hole{
+    width:100%;
+    img{
+        width:100%;
+    }
+    position:absolute;
+    z-index:0;
+    opacity:0;
+    top:-60%;
+
+    animation: rotate 60s infinite ease-in-out;
+
+}
+
+/*
+                .                                
+   ___  , __   _/_     ___  .___  ` , __     ___.
+ .'   ` |'  `.  |    .'   ` /   \ | |'  `. .'   `
+ |----' |    |  |    |----' |   ' | |    | |    |
+ `.___, /    |  \__/ `.___, /     / /    |  `---|
+                                            \___/
+
+*/
+
+
+body.share.entering{
+
+    #black_hole{
+
+        top:-30%;
+        opacity:1;
+        transition:all 3s;
+        transition-delay:1s;
+        animation: rotate 60s infinite ease-in-out;
 
     }
+   
 
-    .position2{
+    #start_notice{
+       
+        h1,h2{
+            position: relative;
+            transform:scale(0);
+        }
+        h1{
+            animation: fade-in-out 7s 4s 1;
+        }
+        h2{
+            animation: fade-in-out 7s 7s 1;
+        
+        }
+    }
 
-        /*所有头像大小相同*/
-        .avatar.big, .avatar.small{
-            width:46px;
-            height:46px;
-            margin-left:-23px;
-        }
+    
+    #avatars_container{
+        opacity:1 !important;
+        /*transition:all 2s;*/
+        top:40%;
 
-        .added img{
-            margin-left:-23px !important;
-        }
-        /*row 1*/
-        #ava_4{
-            left:10%;
-            top:30px;
-        }
+         .avatar{
+            opacity:0;
+            transform:scale(0.4);
 
-        #ava_5{
-            left:30%;
-            top:30px;
-        }
-
-        #ava_6{
-            left:50%;
-            top:30px;
-        }
-        #ava_7{
-            left:70%;
-            top:30px;
-        }
-
-        #ava_8{
-            left:90%;
-            top:30px;
-        }
-
-        /*row2*/
-        #ava_9{
-            left:10%;
-            top:80px;
-        }
-        #ava_10{
-            left:30%;
-            top:80px;
-        }
-
-        #ava_11{
-            left:50%;
-            top:80px;
-        }
-        #ava_12{
-            left:70%;
-            top:80px;
-        }
-
-
-        #ava_13{
-            left:90%;
-            top:80px;
-        }
-        /*row3*/
-        #ava_14{
-            left:10%;
-            top:130px;
         }
         #ava_1{
-            left:30%;
-            top:130px;
-        }
-        
-        #ava_2{
-            left:50%;
-            top:130px;
+            animation:floating1 3s 5.5s infinite;
+            transform:scale(1);
         }
 
-        #ava_3{
-            left:70%;
-            top:130px;
-        }
-        #ava_15{
-            left:90%;
-            top:130px;
-        }
-
-        /*row4*/
-
-        #ava_16{
-            left:10%;
-            top:180px;
-        }
-
-        #ava_17{
-            left:30%;
-            top:180px;
-        }
-
-        #ava_18{
-            left:50%;
-            top:180px;
-        }
-
-        #ava_19{
-            left:70%;
-            top:180px;
-        }
-
-        #ava_20{
-            left:90%;
-            top:180px;
-        }
-
-        /*row5*/
-        #ava_21{
-            left:10%;
-            top:230px;
-        }
-
-        #ava_22{
-            left:30%;
-            top:230px;
-        }
-
-        #ava_23{
-            left:50%;
-            top:230px;
-        }
-
-        #ava_24{
-            opacity:1;
-            left:70%;
-            top:230px;
-        }
-
-        #ava_25{
-            opacity:1;
-            left:90%;
-            top:230px;
-        }
-
-
-    }
-
-
-
-    /*进入share页面，头像闪烁，文字淡入*/
-    &.entering{
-        #share_notice{
-            opacity:1;
-            /*transition:all 2s;*/
-            top:0;
-
-             transform: scale(1) translate(0, 0);
-             transition: transform 2s, opacity 1s;
-            
-        }
-        #avatars_container{
-            opacity:1 !important;
-            /*transition:all 2s;*/
-            top:40%;
-            transform: scale(1) translate(0, 0);
-            transition: transform 2s, opacity 1s;
-            transition-delay:0.5s;
-        }
-        
-
-
-
-        #ava_1,
-        #ava_5,
-        #ava_8
-        #ava_10,
-
-        #ava_17,
-        #ava_22{
-            animation-name:             floating1; 
-            animation-duration:         3s; 
-            animation-iteration-count:  infinite;
-        }
-
+        @delay1: 12s;
 
         #ava_2,
-        #ava_6,
+        #ava_5,
+        #ava_8,
+        #ava_9,
+        #ava_17,
+        #ava_22{
+             animation:avatar_fadein 3s @delay1 1 forwards,floating1 3s @delay1 infinite;
+        }
 
+        @delay2: 13.5s;
+       
+        #ava_3,
+        #ava_6,
         #ava_12,
         #ava_16,
         #ava_18,
         #ava_20{
-            animation-name:             floating2; 
-            animation-duration:         1.5s; 
-            animation-iteration-count:  infinite;
+            animation:avatar_fadein 3s @delay2 1 forwards,floating2 2s @delay2 infinite;
         }
+
+        @delay3: 15s;
 
         #ava_4,
         #ava_7,
-        #ava_9,
+        #ava_10,
         #ava_11,
         #ava_14,
-
         #ava_19,
         #ava_23,
         #ava_25{
-            animation-name:             floating3; 
-            animation-duration:         2s; 
-            animation-iteration-count:  infinite;
+            box-shadow: 0 0 10px @shine;
+
+            animation:avatar_fadein 3s @delay3 1 forwards,
+             floating3 2.5s @delay3 infinite;
+
         }
 
 
-        #ava_3,
+       
+        @delay4:16s;
+
         #ava_13,
         #ava_15,
         #ava_19,
         #ava_21,
         #ava_24{
-            animation-name:             floating4; 
-            animation-duration:         2s; 
-            animation-iteration-count:  infinite;
+            animation:avatar_fadein 3s @delay4 1 forwards,
+             floating4 2s @delay4 infinite;
         }
 
+        #ava_1{
+            opacity:1;
+            left:50%;
+
+            animation:box_shine 6s 9s 1 forwards;
+
+            .flip_avatar{
+                animation: flipping 8s 2s 1 forwards;
+                animation-timing-function: ease-in-out;
+            }
+        }
+        
     }
 
-
-
-    /*新人加入*/
+    /*没有新人加入*/
 
     #ava_2, #ava_3{
-        /*text-align: center;*/
         img{
-            position: absolute;
-            width:0;
-            top: 33px;
-            left:50%;
-            margin-left:0;
-            transition:all 1.5s;
-
+            display: none;
         }
     }
 
-    #ava_2.added, #ava_3.added{
-        img{
-            width:100%;
-            top:0;
-            margin-left:-33px;
-        }
-    }
-
-
-    /*人满，开始聊天*/
-
-    &.leaving{
+    /*发起人class=host视图*/
+    &.host{
         #share_notice{
-            top:-100%;
-            opacity: 0;
-            transition: all 2s;
-            transition-delay: 0.5s;
+            h1,h2{
+                position: relative;
+                transform:scale(0);
+            }
+            h1{
+                animation: fade-in 4s 12s 1 forwards;
+            }
+            h2{
+                animation: fade-in 4s 12s 1 forwards;
+            }
+
+            strong{
+                color:@main_blue;
+                font-weight: bold;
+                text-shadow:1px 1px 1px @dark_grey;
+
+            }
+            img{
+    
+               animation: arrow_up 2s 15s 1 forwards;
+            }
+            
         }
 
-        #avatars_container{
-            top:-100%;
-            opacity:0;
-            /*transition-delay: 3s;*/
-            transition: all 2s;
-            /*transition-delay: 2s;*/
-            .avatar{
-                transition-delay: 4s;
-                -webkit-transition-delay: 4s;
+         /*host  看到第2个人加入*/
+        &.host.add_one{
+
+             #start_notice{
+                display: none;
             }
-            #ava_22,
-            #ava_9,
-            #ava_19,
-            #ava_8,
-            #ava_14,
-            #ava_15,
+
+            #ava_2{
+                background:none;
+
+                img{
+                    display: block;
+                }
+
+                .flip_avatar{
+                    animation: flipping 4s 1 forwards ease-in-out; 
+                    
+                }
+            
+            }
+
+        }
+
+        /*host 看到第3个人加入并解锁*/
+        &.host.leaving{
+
+            #ava_3{
+                background:none;
+
+                img{
+                    display: block;
+                }
+                
+                .flip_avatar{
+                    animation: flipping 4s 1 forwards ease-in-out; 
+                    
+                }
+            
+            }
+
+        }
+
+    }
+
+       
+
+    /*被邀请人视图*/
+    &.guest{
+    
+        #guest_notice{
+            
+            h1,h2{
+                 animation: fade-in 2s 11s 1 forwards;
+            }
+        }
+          /*人满，两个一起flip, 然后解锁*/
+        &.leaving{
+
+             #ava_2, #ava_3{
+                background:none;
+
+                img{
+                    display: block;
+                }
+                
+                .flip_avatar{
+                    animation: flipping 4s 1 forwards ease-in-out; 
+                    
+                }
+            
+            }
+
+        }
+
+    }
+/*
+  .                                       
+  |     ___    ___  _   __ ` , __     ___.
+  |   .'   `  /   ` |   /  | |'  `. .'   `
+  |   |----' |    | `  /   | |    | |    |
+ /\__ `.___, `.__/|  \/    / /    |  `---|
+                                     \___/
+
+*/
+  
+    /*解锁后飞出， host和guest视图相同的部分*/
+    &.leaving{
+
+        #full_notice{
+            animation:notice_fadeout 1.5s 4.5s 1 forwards;
+
+            h1,h2{
+                 animation: fade-in 2s 1 forwards;
+            }
+           
+        }
+        
+        #black_hole{
+            opacity:0;
+            transition:opacity 1s;
+            transition-delay: 6s;
+        }
+
+        #share_notice, #guest_notice{
+            animation: notice_fadeout 1.5s 1 forwards;
+        }
+        #avatars_container{
+            animation: avatar_leave 2s 4.5s 1 forwards  ease-in !important;
+            .avatar{
+                 left:50%;
+                 width:10px;
+                 height:10px;
+                 transition:all 1.5s ease-in;
+            }
+           
+            #ava_1,
+            #ava_5,
             #ava_6,
-            #ava_18{
-                top:-100% !important;
-                transition:top 4s;
-                /*transition-delay: 2s;*/
+            #ava_9,
+            #ava_10,
+            #ava_13,
+            #ava_14,
+            #ava_16,
+            #ava_19,
+            #ava_22{
+                transition-delay:4.5s;
             }
 
             #ava_11,
-            #ava_1,
-            #ava_8,
+            #ava_25,
             #ava_2,
-            #ava_6,
+            #ava_15,
+            #ava_8,
             #ava_7    {
-                top:-100% !important;
-                transition:top 4.6s;
-                /*transition-delay: 2.5s;*/
+               
+                transition-delay:5s;
             }
 
-             #ava_2,
-            #ava_21,
-            #ava_10,
+             #ava_12,
+            #ava_20,
+            #ava_24,
             #ava_3,
             #ava_4,
-            #ava_17 ,
-            #ava_7    {
-                top:-100% !important;
-                transition:top 4.7s;
-                /*transition-delay: 3s;*/
+            #ava_18    {
+                
+                transition-delay: 5.5s;
+            }
+             #ava_21,
+            #ava_23,
+            #ava_13,
+            #ava_17
+                {
+                
+                transition-delay:6.5s;
             }
 
         }
     }
 
-
 }
+
 
 
 
@@ -821,10 +1005,22 @@ body.create{
 
 
 /* ==========================================================================
-   FOLLOW
+
+    ####### ####### #       #       ####### #     # 
+    #       #     # #       #       #     # #  #  # 
+    #       #     # #       #       #     # #  #  # 
+    #####   #     # #       #       #     # #  #  # 
+    #       #     # #       #       #     # #  #  # 
+    #       #     # #       #       #     # #  #  # 
+    #       ####### ####### ####### #######  ## ##  
+   
    ========================================================================== */
 
-.follow{
+body.follow{
+
+    background:url('../img/blackhole2.jpg') no-repeat center -220px @dark_blue;
+    background-size:100% auto;
+
     ul{
         width:13em;
         margin:0 auto;
@@ -857,7 +1053,15 @@ body.create{
 
 
 /* ==========================================================================
-   LIST view 2 pages
+
+    #       ###  #####  ####### 
+    #        #  #     #    #    
+    #        #  #          #    
+    #        #   #####     #    
+    #        #        #    #    
+    #        #  #     #    #    
+    ####### ###  #####     #    
+                            
    ========================================================================== */
 
 .top_ad{
@@ -868,15 +1072,34 @@ body.create{
     height: 44px;
     
     text-align: center;
-    background:#e9ecf1;
-    &.right_logo{
+    
+
+    line-height: 44px;
+
+    .face{
+        width:100%;
+            height: 44px;
+
+    }
+    .right_logo{
         background:#e9ecf1 url('../img/logo-fox@2x.png') right no-repeat;
         background-size:auto 44px;
     }
 
-    p{
-        margin:0;
-        line-height: 44px;
+    .group_info{
+        background:@dark_grey;
+        color:white;
+        padding:0 1em;
+        .name{
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width:80%;
+            display: inline-block;
+        }
+        .number{
+            float:right;
+        }
     }
     
 
@@ -891,6 +1114,33 @@ body.create{
     }
 
 }
+/*带翻转效果的顶部条*/
+.top_ad.cube_view{
+    transform-style: preserve-3d;
+    transition:transform 1s;
+
+    .face{
+        position: absolute;
+        top:0;
+    }
+    .face1{
+        transform: translateZ( 22px );
+    }
+
+    .face2{
+        transform: rotateX( -90deg ) translateZ( 22px );
+
+    }
+
+    &.show_face1{
+        transform: translateZ( -22px );
+    }
+
+    &.show_face2{
+        transform: translateZ( -22px ) rotateX( 90deg );
+    }
+}
+
 
 .bottom_ad{
     position: fixed;
@@ -945,7 +1195,7 @@ body.create{
         }
 
         &.inactive{
-             background-color: #30343d;
+             background-color: @sub_grey;
               color:#696c70;
         }
 
@@ -983,8 +1233,9 @@ body.create{
 
 
 .top_tabs + .container{
-    margin-top:41px;
-    /*padding:0.8em 0;*/
+    margin: 41px 0 44px 0; 
+         /*tabs高度41px*/
+         /*底部广告条的高度44px*/
 }
 
 .tab_list{ 
@@ -1020,12 +1271,44 @@ body.create{
 
 .list_view{
     color:white;
-    margin: 0 0 44px 0; /*底部广告条的高度*/
+
+
+   .container{
+         margin-left: 0; 
+         margin-right:0;
+    }
 
      @list_height:80px;
 
 
- 
+    .no_item{
+        li{
+            height:auto;
+            background:none;
+            text-align: center;padding:2em;
+            color:#bbb;
+
+            &:active{
+                background:none;
+            }
+        }
+        .main{
+            font-size:1.3em;
+            margin-bottom: 2em
+        }
+
+        a{
+            color:@main_blue;
+            border:1px solid @main_blue;
+            border-radius: 4px;
+            padding:0.4em 1em;
+            display: inline-block;
+
+            &:active{
+                background:@dark_grey;
+            }
+        }
+    }
 
     li{
 
@@ -1037,7 +1320,10 @@ body.create{
         margin:0 0 1px 0;
         overflow: hidden;
         /*border-radius: 4px;*/
-        
+        &:active{
+            background:#30333a;
+
+        }
         .group_info{
             padding:1em;
             margin-right: 40px;
@@ -1102,7 +1388,15 @@ body.create{
 }
 
 /* ==========================================================================
-   CHAT
+
+     #####  #     #    #    ####### 
+    #     # #     #   # #      #    
+    #       #     #  #   #     #    
+    #       ####### #     #    #    
+    #       #     # #######    #    
+    #     # #     # #     #    #    
+     #####  #     # #     #    #    
+                               
    ========================================================================== */
 
 .chat_view{
@@ -1123,7 +1417,6 @@ body.create{
         font-size: 0.9em;
     }
     @avatar: 30px;
-    /*@border:2px;*/
 
     .avatar{
         width:@avatar;
@@ -1132,22 +1425,16 @@ body.create{
         background-color: #303339;
         position: absolute;
         margin-top:4px;
-        /*top:-@border;*/
 
         img{
             width:@avatar ;
-            /*margin:@border;*/
         }
     }
 
     .content{
        
         color:white;
-        /*margin:0 @avatar/2;*/
-        
-        /*display: inline-block;*/
         border-radius: 2px;
-        /*width:100%;*/
         margin:0 40px;
         background:@dark_grey;
         padding:0.6em 1.2em;
@@ -1156,11 +1443,6 @@ body.create{
     .left{
         .avatar{
             left:0;
-        }
-        .content{
-            /*margin-left:10%;*/
-             
-             
         }
     }
 
@@ -1171,13 +1453,8 @@ body.create{
             right:0;
         }
         .content{
-            /*background: #525761;*/
-            /*float:right;*/
-            /*padding:0.6em 1.4em;*/
-            /*text-align: right;*/
             overflow: auto;
             color:@main_blue;
-
             span{
                 float:right;
             }
@@ -1190,6 +1467,7 @@ body.create{
 .chat_input{
     position: fixed;
     bottom: 0;
+    z-index: 19999;
     background: @dark_grey;
     width:100%;
     border-top:1px solid @main_grey;
@@ -1230,7 +1508,6 @@ body.create{
     }
     .join_group{
         padding:0.4em 2.4em;
-        /*font-size: 1.2em;*/
         float: right;
     }
 
@@ -1241,8 +1518,75 @@ body.create{
     }
 }
 
+
+
+
+#top_msg{
+    color:white;
+
+    position: fixed;
+    z-index: 20000;
+    background: @main_blue_a08;
+
+    right:-200px;
+    top:50px;
+    font-size: 0.8em;
+    padding-right:0.6em;
+    padding-left: 1em;
+    height:30px;
+    line-height: 30px;
+    border-radius: 2em 0 0 2em;
+    box-shadow: 0 2px 0 @dark_grey;
+    transition:right 1s;
+
+    &.active{
+        right:0;
+    }
+}
+
+#bottom_msg{
+    color:white;
+
+    position: fixed;
+    z-index: 5;
+    background: @main_blue_a08;
+    width:100%;
+    font-size: 0.9em;
+    text-align: center;
+    height:40px;
+    line-height: 38px;
+        box-shadow: 0 -2px 0 rgba(0,0,0,0.1);
+    bottom:-50px;
+    transition:bottom 1s;
+
+    .close{
+        float:right;
+        padding:0 10px;
+        font-size: 1.4em;
+        color:@dark_grey;
+        line-height: 36px;
+    }
+    &:active{
+        background:@main_blue_active;
+    }
+    &.active{
+            bottom:50px;
+
+    }
+}
+
+
+
 /* ==========================================================================
-   MISC
+   
+    #     # ###  #####   #####  
+    ##   ##  #  #     # #     # 
+    # # # #  #  #       #       
+    #  #  #  #   #####  #       
+    #     #  #        # #       
+    #     #  #  #     # #     # 
+    #     # ###  #####   #####  
+                            
    ========================================================================== */
 
 .overlay{
@@ -1257,30 +1601,25 @@ body.create{
     top:50px;
     z-index: 99999;
     width:220px;
-   
     left:50%;
     margin-left:-110px;
     padding:2em 1em 1em 1em;
     color:@yellow;
-   
     font-size: 1.1em;
     
-
     a{
         color:@main_blue;
         display: block;
-        /*float:right;*/
         width:100%;
         text-align: center;
         padding:1em 0;
-        /*border:1px solid @main_blue;*/
     }
 }
 
 
 
 #loading{
-    display:none;
+    /*display:none;*/
     top:50%;
     margin-top:-100px;
     width:120px;

@@ -10,11 +10,13 @@
         <link rel="stylesheet" href="css/main.css">
         
     </head>
-          <!-- body class=create -->
+          
 
+    <!-- body class=create 提交成功后加入 class=submitted-->
+    
     <body class="create">
-        <!-- 提交后container加入class=submitted -->
-        <div class="container create submitted">
+        
+        <div class="container">
             <form id="create_group" class="clearfix" method="post" action="">
                
                 <input type="text" placeholder="设置群名称" />
@@ -32,10 +34,21 @@
 
                 <div class="checkbox">
                     <input type="checkbox" value="" id="public_group" name="public_group" />
-                   
-                    <label for="public_group"> <div class="box clearfix"></div><span>公开/允许查找</span></label>
 
+                    <label for="public_group"> 
+                        <div class="box clearfix">
+<!-- 这里插入一个img -->
+                            <img src="/img/check.png" />
+                        </div>
+                        <span>公开/允许查找</span>
+                    </label>
 
+                     <div class="notice">
+                        <p>公开群可以被任何人加入
+                        </p>
+                        
+
+                    </div>
                 </div>
              
                
@@ -45,7 +58,17 @@
 
            
         </div>
+       
+       <script src="js/vendor/jquery-1.11.1.min.js"></script>
+         <script>
+            // 临时js，只演示
+            $(document).ready(function(){
+                $('form').submit(function(e){
+                    e.preventDefault();
+                    $('body').addClass('submitted');
+                });
+            })
 
-      
+         </script>
     </body>
 </html>

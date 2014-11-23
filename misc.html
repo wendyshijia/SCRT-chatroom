@@ -1,0 +1,58 @@
+<!doctype html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Secret匿名群</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no" />
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        
+    </head>
+          
+
+    <!-- body class=create 提交后container加入 class=submitted-->
+
+    <body>
+        <div class="top_ad follow cube_view show_face1">
+            <div class="face face1 right_logo">
+                <button class="blue_btn">关注秘密公众号</button>新消息来了通知你
+            </div>
+            <div class="face face2 group_info">
+               <span class="name">群名称群名称群名称群名称群名称群名称群名称群名称</span><span class="number">(20)</span>
+            </div>
+        </div>
+         <div id="alert" class="overlay">
+            <span>群名称需少于10个字</span>
+
+            <a class="close">知道了</a>
+        </div>
+
+
+        <div id="loading" class="overlay">
+            <img src="img/logo-foxhole@2x.gif" alt="" />
+            <span>创建中</span>
+        </div>
+
+         <!-- class=active 消息框出现，去掉active 消息框划出 -->
+        <div id="top_msg" class="active">
+            <span>3</span>条新留言
+        </div>
+         <!-- class=active 消息框出现，去掉active 消息框划出 -->
+        <div id="bottom_msg" class="active">
+            <span>你想吐槽上司吗？快喊同事一起加入吧 &gt;</span>
+            <span class="close">&times;</span>
+        </div>
+
+         <div class="chat_input">
+            <form method="" action="">
+
+                <input class="message_input" type="text" />
+                <!-- 内容开始前，加入class="disable" -->
+                <input class="submit" type="submit" value="发布"/>
+            </form>
+        </div>
+
+    </body>
+</html>
