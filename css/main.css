@@ -1,0 +1,1245 @@
+/* ==========================================================================
+   general
+   ========================================================================== */
+@keyframes floating1 {
+  10% {
+    margin-top: 0px;
+    opacity: 0.4;
+  }
+  60% {
+    margin-top: -6px;
+    opacity: 1;
+  }
+}
+@keyframes floating2 {
+  0% {
+    margin-top: 0px;
+    opacity: 1;
+  }
+  30% {
+    margin-top: 0px;
+  }
+  40% {
+    margin-top: -3px;
+    opacity: 0.4;
+  }
+}
+@keyframes floating3 {
+  0% {
+    margin-top: 0px;
+    opacity: 1;
+  }
+  30% {
+    margin-top: 4px;
+  }
+  90% {
+    margin-top: -2px;
+    opacity: 0.4;
+  }
+  99% {
+    margin-top: 0px;
+  }
+}
+@keyframes floating4 {
+  0% {
+    margin-top: 0px;
+    opacity: 1;
+  }
+  30% {
+    margin-top: -2px;
+    opacity: 0.4;
+  }
+  90% {
+    margin-top: -4px;
+  }
+  99% {
+    margin-top: 0px;
+  }
+}
+@-webkit-keyframes floating1 {
+  10% {
+    margin-top: 0px;
+    opacity: 0.4;
+  }
+  60% {
+    margin-top: -6px;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes floating2 {
+  0% {
+    margin-top: 0px;
+    opacity: 1;
+  }
+  30% {
+    margin-top: 0px;
+  }
+  40% {
+    margin-top: -3px;
+    opacity: 0.4;
+  }
+}
+@-webkit-keyframes floating3 {
+  0% {
+    margin-top: 0px;
+    opacity: 1;
+  }
+  30% {
+    margin-top: 4px;
+  }
+  90% {
+    margin-top: -2px;
+    opacity: 0.4;
+  }
+  99% {
+    margin-top: 0px;
+  }
+}
+@-webkit-keyframes floating4 {
+  0% {
+    margin-top: 0px;
+    opacity: 1;
+  }
+  30% {
+    margin-top: -2px;
+    opacity: 0.4;
+  }
+  90% {
+    margin-top: -4px;
+  }
+  99% {
+    margin-top: 0px;
+  }
+}
+@keyframes hole {
+  25% {
+    -webkit-transform: scale(0.7) rotate(0deg);
+            transform: scale(0.7) rotate(0deg);
+  }
+  65% {
+    -webkit-transform: scale(4) rotate(100deg);
+            transform: scale(4) rotate(100deg);
+  }
+  80% {
+    -webkit-transform: scale(4.5) rotate(90deg);
+            transform: scale(4.5) rotate(90deg);
+  }
+  100% {
+    -webkit-transform: scale(12) rotate(90deg);
+            transform: scale(12) rotate(90deg);
+  }
+}
+@-webkit-keyframes hole {
+  25% {
+    -webkit-transform: scale(0.7) rotate(0deg);
+            transform: scale(0.7) rotate(0deg);
+  }
+  65% {
+    -webkit-transform: scale(4) rotate(100deg);
+            transform: scale(4) rotate(100deg);
+  }
+  80% {
+    -webkit-transform: scale(4.5) rotate(90deg);
+            transform: scale(4.5) rotate(90deg);
+  }
+  100% {
+    -webkit-transform: scale(12) rotate(90deg);
+            transform: scale(12) rotate(90deg);
+  }
+}
+html {
+  font-size: 1em;
+  line-height: 1.4;
+  font-family: "Hiragino Sans GB W3", "Microsoft YaHei", sans-serif;
+  font-weight: normal;
+}
+body {
+  min-height: 100%;
+  background: #40454e;
+}
+body.share {
+  background: #282b33;
+  overflow: hidden;
+}
+html,
+body {
+  /*overflow:hidden;*/
+}
+div,
+input,
+ul,
+li {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  margin: 0 0.8em;
+}
+input {
+  border: 1px solid #666;
+  border-radius: 0.2em;
+}
+input:focus {
+  border: 1px solid #079fd1;
+  outline: none;
+}
+.blue_btn {
+  background-color: #079fd1;
+  border-radius: 2px;
+  color: white;
+  border: #079fd1;
+}
+.blue_btn:active {
+  background-color: #045f7d;
+}
+strong {
+  color: #079fd1;
+}
+::-webkit-input-placeholder {
+  color: #555;
+}
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #555;
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #555;
+}
+:-ms-input-placeholder {
+  color: #555;
+}
+a {
+  text-decoration: none;
+}
+/* ==========================================================================
+    create group
+   ========================================================================== */
+body.create {
+  background: #fafafa;
+}
+.create.submitted #create_group input[type="text"] {
+  -webkit-animation-name: hole;
+          animation-name: hole;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  -webkit-transition-timing-function: ease-in;
+          transition-timing-function: ease-in;
+}
+.create.submitted #create_group .notice,
+.create.submitted #create_group .checkbox,
+.create.submitted #create_group input[type="submit"] {
+  opacity: 0;
+  -webkit-transition: opacity 1.5s;
+          transition: opacity 1.5s;
+}
+#create_group {
+  margin: 2.4em 0 3em 0;
+}
+#create_group input[type="text"] {
+  background: #282b33;
+  width: 100%;
+  padding: 0.8em;
+  font-size: 1.2em;
+  color: #079fd1;
+}
+#create_group .notice,
+#create_group .checkbox,
+#create_group input[type="submit"] {
+  opacity: 1;
+}
+#create_group .checkbox {
+  /*float: left;*/
+  /*width:60%;*/
+  color: #2a2d32;
+  margin-top: 1.8em;
+  font-size: 1.2em;
+  display: inline-block;
+}
+#create_group .checkbox input {
+  display: none;
+}
+#create_group .checkbox .box {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  margin-right: 0.5em;
+  border-radius: 2px;
+  background-color: #282b33;
+  float: left;
+}
+#create_group .checkbox input:checked + label {
+  color: #079fd1;
+}
+#create_group .checkbox input:checked + label div.box {
+  background: #282b33 url('../img/check.png') no-repeat center;
+  -webkit-background-size: 16px 16px;
+          background-size: 16px 16px;
+}
+#create_group input[type="submit"] {
+  float: right;
+  padding: 0.8em 1.2em;
+  font-size: 1.2em;
+  width: 6em;
+  margin-top: 1.4em;
+}
+#create_group input[type="submit"].disable {
+  background: #666;
+  color: #aaa;
+}
+.notice {
+  background-color: #ececec;
+  width: 100%;
+  color: #454a52;
+  border-radius: 4px;
+  padding: 0.4em 1em;
+  margin-top: 0.2em;
+}
+.notice p {
+  line-height: 1.4;
+  font-size: 0.9em;
+  margin: 0;
+}
+/* ==========================================================================
+   SHARE
+   ========================================================================== */
+.share {
+  color: white;
+  width: 100%;
+  overflow-x: hidden;
+}
+.share #arrow {
+  width: 50%;
+  float: right;
+  margin-top: 10px;
+}
+.share h1 {
+  font-size: 1.5em;
+  clear: both;
+  text-align: center;
+  font-weight: normal;
+}
+.share h2 {
+  font-size: 1.3em;
+  text-align: center;
+  font-weight: normal;
+}
+.share strong {
+  padding: 0 1px;
+  font-weight: normal;
+}
+/*#share_avatars{
+    background:url('../img/share_bg.png') no-repeat center;
+    background-size:160px auto;
+   
+    width:160px;
+    height:166px;
+    margin:0 auto;
+
+    position: relative;
+
+     @avatar: 60px;
+
+    .avatar{
+        width:@avatar;
+        height:@avatar;
+        border-radius:50%;
+        background-color: #303339;
+        position: absolute;
+        
+        img{
+            width:@avatar;
+        }
+
+        &.first{
+            top:49px;
+            left:3px;
+        }
+
+        &.second{
+            top:3px;
+            left:97px;
+        }
+
+        &.third{
+            top:103px;
+            left:97px;
+        }
+    }
+
+}
+*/
+.container.share {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  /*general avatar styles*/
+  /*我*/
+  /*朋友1*/
+  /*朋友2*/
+  /****************
+    default positions
+    *****************/
+  /*进入share页面，头像闪烁，文字淡入*/
+  /*新人加入*/
+  /*人满，开始聊天*/
+}
+.container.share #share_notice {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  -webkit-transform: scale(0) translate(0, 450px);
+      -ms-transform: scale(0) translate(0, 450px);
+          transform: scale(0) translate(0, 450px);
+}
+.container.share #avatars_container {
+  position: absolute;
+  top: 40%;
+  width: 420px;
+  height: 400px;
+  margin: 0 auto;
+  left: 50%;
+  margin-left: -210px;
+  opacity: 0;
+  overflow: initial;
+  -webkit-transform: scale(0) translate(0, -450px);
+      -ms-transform: scale(0) translate(0, -450px);
+          transform: scale(0) translate(0, -450px);
+}
+.container.share .avatar {
+  background: url('../img/avatar_unknown.png') no-repeat center;
+  -webkit-background-size: 100% 100%;
+          background-size: 100%;
+  position: absolute;
+  z-index: 1000;
+  width: 46px;
+  height: 46px;
+  margin-left: -23px;
+  /*position animation*/
+  -webkit-transition: top 1s, left 1s, width 0.5s, height 0.5s, opacity 1s, margin-left 0.5s;
+          transition: top 1s, left 1s, width 0.5s, height 0.5s, opacity 1s, margin-left 0.5s;
+}
+.container.share .avatar span {
+  display: none;
+}
+.container.share .avatar.big {
+  width: 66px;
+  height: 66px;
+  margin-left: -33px;
+}
+.container.share .avatar.small {
+  width: 30px;
+  height: 30px;
+  margin-left: -15px;
+}
+.container.share .avatar img {
+  width: 100%;
+  -webkit-transition: margin-left 1s;
+          transition: margin-left 1s;
+}
+.container.share #ava_1 {
+  z-index: 2000;
+}
+.container.share #ava_1 span {
+  display: block;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: -23px;
+  color: white;
+}
+.container.share #ava_2 {
+  z-index: 1999;
+}
+.container.share #ava_3 {
+  z-index: 1998;
+}
+.container.share .position1 #ava_1 {
+  left: 33%;
+  top: 90px;
+}
+.container.share .position1 #ava_2 {
+  left: 65%;
+  top: 80px;
+}
+.container.share .position1 #ava_3 {
+  left: 50%;
+  top: 140px;
+}
+.container.share .position1 #ava_4 {
+  left: 66%;
+  top: 150px;
+}
+.container.share .position1 #ava_5 {
+  left: 82%;
+  top: 120px;
+}
+.container.share .position1 #ava_6 {
+  left: 90%;
+  top: 70px;
+}
+.container.share .position1 #ava_7 {
+  left: 99%;
+  top: 110px;
+}
+.container.share .position1 #ava_8 {
+  left: 50%;
+  top: 70px;
+}
+.container.share .position1 #ava_9 {
+  left: 22%;
+  top: 60px;
+}
+.container.share .position1 #ava_10 {
+  left: 30%;
+  top: 160px;
+}
+.container.share .position1 #ava_11 {
+  left: 8%;
+  top: 80px;
+}
+.container.share .position1 #ava_12 {
+  left: 3%;
+  top: 130px;
+}
+.container.share .position1 #ava_13 {
+  left: 60%;
+  top: 200px;
+}
+.container.share .position1 #ava_14 {
+  left: 67%;
+  top: 40px;
+}
+.container.share .position1 #ava_15 {
+  left: 78%;
+  top: 60px;
+}
+.container.share .position1 #ava_16 {
+  left: 98%;
+  top: 50px;
+}
+.container.share .position1 #ava_17 {
+  left: 77%;
+  top: 176px;
+}
+.container.share .position1 #ava_18 {
+  left: 93%;
+  top: 160px;
+}
+.container.share .position1 #ava_19 {
+  left: 38%;
+  top: 50px;
+}
+.container.share .position1 #ava_20 {
+  left: 17%;
+  top: 120px;
+}
+.container.share .position1 #ava_21 {
+  left: 15%;
+  top: 160px;
+}
+.container.share .position1 #ava_22 {
+  left: 3%;
+  top: 50px;
+}
+.container.share .position1 #ava_23 {
+  left: 40%;
+  top: 190px;
+}
+.container.share .position1 #ava_24 {
+  opacity: 0;
+  left: 33%;
+  top: 90px;
+}
+.container.share .position1 #ava_25 {
+  opacity: 0;
+  left: 33%;
+  top: 90px;
+}
+.container.share .position2 {
+  /*所有头像大小相同*/
+  /*row 1*/
+  /*row2*/
+  /*row3*/
+  /*row4*/
+  /*row5*/
+}
+.container.share .position2 .avatar.big,
+.container.share .position2 .avatar.small {
+  width: 46px;
+  height: 46px;
+  margin-left: -23px;
+}
+.container.share .position2 .added img {
+  margin-left: -23px !important;
+}
+.container.share .position2 #ava_4 {
+  left: 10%;
+  top: 30px;
+}
+.container.share .position2 #ava_5 {
+  left: 30%;
+  top: 30px;
+}
+.container.share .position2 #ava_6 {
+  left: 50%;
+  top: 30px;
+}
+.container.share .position2 #ava_7 {
+  left: 70%;
+  top: 30px;
+}
+.container.share .position2 #ava_8 {
+  left: 90%;
+  top: 30px;
+}
+.container.share .position2 #ava_9 {
+  left: 10%;
+  top: 80px;
+}
+.container.share .position2 #ava_10 {
+  left: 30%;
+  top: 80px;
+}
+.container.share .position2 #ava_11 {
+  left: 50%;
+  top: 80px;
+}
+.container.share .position2 #ava_12 {
+  left: 70%;
+  top: 80px;
+}
+.container.share .position2 #ava_13 {
+  left: 90%;
+  top: 80px;
+}
+.container.share .position2 #ava_14 {
+  left: 10%;
+  top: 130px;
+}
+.container.share .position2 #ava_1 {
+  left: 30%;
+  top: 130px;
+}
+.container.share .position2 #ava_2 {
+  left: 50%;
+  top: 130px;
+}
+.container.share .position2 #ava_3 {
+  left: 70%;
+  top: 130px;
+}
+.container.share .position2 #ava_15 {
+  left: 90%;
+  top: 130px;
+}
+.container.share .position2 #ava_16 {
+  left: 10%;
+  top: 180px;
+}
+.container.share .position2 #ava_17 {
+  left: 30%;
+  top: 180px;
+}
+.container.share .position2 #ava_18 {
+  left: 50%;
+  top: 180px;
+}
+.container.share .position2 #ava_19 {
+  left: 70%;
+  top: 180px;
+}
+.container.share .position2 #ava_20 {
+  left: 90%;
+  top: 180px;
+}
+.container.share .position2 #ava_21 {
+  left: 10%;
+  top: 230px;
+}
+.container.share .position2 #ava_22 {
+  left: 30%;
+  top: 230px;
+}
+.container.share .position2 #ava_23 {
+  left: 50%;
+  top: 230px;
+}
+.container.share .position2 #ava_24 {
+  opacity: 1;
+  left: 70%;
+  top: 230px;
+}
+.container.share .position2 #ava_25 {
+  opacity: 1;
+  left: 90%;
+  top: 230px;
+}
+.container.share.entering #share_notice {
+  opacity: 1;
+  /*transition:all 2s;*/
+  top: 0;
+  -webkit-transform: scale(1) translate(0, 0);
+      -ms-transform: scale(1) translate(0, 0);
+          transform: scale(1) translate(0, 0);
+  -webkit-transition: -webkit-transform 2s, opacity 1s;
+          transition: transform 2s, opacity 1s;
+}
+.container.share.entering #avatars_container {
+  opacity: 1 !important;
+  /*transition:all 2s;*/
+  top: 40%;
+  -webkit-transform: scale(1) translate(0, 0);
+      -ms-transform: scale(1) translate(0, 0);
+          transform: scale(1) translate(0, 0);
+  -webkit-transition: -webkit-transform 2s, opacity 1s;
+          transition: transform 2s, opacity 1s;
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+}
+.container.share.entering #ava_1,
+.container.share.entering #ava_5,
+.container.share.entering #ava_8 #ava_10,
+.container.share.entering #ava_17,
+.container.share.entering #ava_22 {
+  -webkit-animation-name: floating1;
+          animation-name: floating1;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+.container.share.entering #ava_2,
+.container.share.entering #ava_6,
+.container.share.entering #ava_12,
+.container.share.entering #ava_16,
+.container.share.entering #ava_18,
+.container.share.entering #ava_20 {
+  -webkit-animation-name: floating2;
+          animation-name: floating2;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+.container.share.entering #ava_4,
+.container.share.entering #ava_7,
+.container.share.entering #ava_9,
+.container.share.entering #ava_11,
+.container.share.entering #ava_14,
+.container.share.entering #ava_19,
+.container.share.entering #ava_23,
+.container.share.entering #ava_25 {
+  -webkit-animation-name: floating3;
+          animation-name: floating3;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+.container.share.entering #ava_3,
+.container.share.entering #ava_13,
+.container.share.entering #ava_15,
+.container.share.entering #ava_19,
+.container.share.entering #ava_21,
+.container.share.entering #ava_24 {
+  -webkit-animation-name: floating4;
+          animation-name: floating4;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+.container.share #ava_2,
+.container.share #ava_3 {
+  /*text-align: center;*/
+}
+.container.share #ava_2 img,
+.container.share #ava_3 img {
+  position: absolute;
+  width: 0;
+  top: 33px;
+  left: 50%;
+  margin-left: 0;
+  -webkit-transition: all 1.5s;
+          transition: all 1.5s;
+}
+.container.share #ava_2.added img,
+.container.share #ava_3.added img {
+  width: 100%;
+  top: 0;
+  margin-left: -33px;
+}
+.container.share.leaving #share_notice {
+  top: -100%;
+  opacity: 0;
+  -webkit-transition: all 2s;
+          transition: all 2s;
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+}
+.container.share.leaving #avatars_container {
+  top: -100%;
+  opacity: 0;
+  /*transition-delay: 3s;*/
+  -webkit-transition: all 2s;
+          transition: all 2s;
+  /*transition-delay: 2s;*/
+}
+.container.share.leaving #avatars_container .avatar {
+  transition-delay: 4s;
+  -webkit-transition-delay: 4s;
+}
+.container.share.leaving #avatars_container #ava_22,
+.container.share.leaving #avatars_container #ava_9,
+.container.share.leaving #avatars_container #ava_19,
+.container.share.leaving #avatars_container #ava_8,
+.container.share.leaving #avatars_container #ava_14,
+.container.share.leaving #avatars_container #ava_15,
+.container.share.leaving #avatars_container #ava_6,
+.container.share.leaving #avatars_container #ava_18 {
+  top: -100% !important;
+  -webkit-transition: top 4s;
+          transition: top 4s;
+  /*transition-delay: 2s;*/
+}
+.container.share.leaving #avatars_container #ava_11,
+.container.share.leaving #avatars_container #ava_1,
+.container.share.leaving #avatars_container #ava_8,
+.container.share.leaving #avatars_container #ava_2,
+.container.share.leaving #avatars_container #ava_6,
+.container.share.leaving #avatars_container #ava_7 {
+  top: -100% !important;
+  -webkit-transition: top 4.6s;
+          transition: top 4.6s;
+  /*transition-delay: 2.5s;*/
+}
+.container.share.leaving #avatars_container #ava_2,
+.container.share.leaving #avatars_container #ava_21,
+.container.share.leaving #avatars_container #ava_10,
+.container.share.leaving #avatars_container #ava_3,
+.container.share.leaving #avatars_container #ava_4,
+.container.share.leaving #avatars_container #ava_17,
+.container.share.leaving #avatars_container #ava_7 {
+  top: -100% !important;
+  -webkit-transition: top 4.7s;
+          transition: top 4.7s;
+  /*transition-delay: 3s;*/
+}
+/* ==========================================================================
+   FOLLOW
+   ========================================================================== */
+.follow ul {
+  width: 13em;
+  margin: 0 auto;
+  font-size: 1.2em;
+}
+.follow ul .box {
+  border-radius: 4px;
+  width: 1.4em;
+  height: 1.4em;
+  display: inline-block;
+  margin-right: 0.5em;
+  background: #2a2d32 url('../img/check.png') no-repeat center;
+  -webkit-background-size: 1.2em 1.2em;
+          background-size: 1.2em;
+  position: relative;
+  top: 0.4em;
+}
+.follow .foxhole {
+  width: 62px;
+  display: block;
+  margin: 2em auto;
+}
+/* ==========================================================================
+   LIST view 2 pages
+   ========================================================================== */
+.top_ad {
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  height: 44px;
+  text-align: center;
+  background: #e9ecf1;
+  /*chat page*/
+  /*顶部关注按钮*/
+}
+.top_ad.right_logo {
+  background: #e9ecf1 url('../img/logo-fox@2x.png') right no-repeat;
+  -webkit-background-size: auto 44px;
+          background-size: auto 44px;
+}
+.top_ad p {
+  margin: 0;
+  line-height: 44px;
+}
+.top_ad.follow button {
+  border: 0;
+  padding: 0.3em 0.4em;
+  margin-right: 0.4em;
+}
+.bottom_ad {
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+  width: 100%;
+  height: 44px;
+  text-align: center;
+  background: #4b515b;
+  border-top: 1px solid #6d6c6d;
+}
+.bottom_ad.right_logo {
+  background: #4b515b url('../img/logo-fox@2x.png') right no-repeat;
+  -webkit-background-size: auto 44px;
+          background-size: auto 44px;
+}
+.bottom_ad p {
+  margin: 0;
+  line-height: 44px;
+  color: white;
+}
+.top_ad + .container {
+  margin-top: 44px;
+  padding: 0.8em 0;
+}
+.top_tabs {
+  position: fixed;
+  top: 0;
+  z-index: 1001;
+  width: 100%;
+  border-bottom: 1px solid #202228;
+  background-color: #2a2d32;
+}
+.top_tabs .tab {
+  width: 50%;
+  text-align: center;
+  font-size: 0.9em;
+  /*padding:0.8em;*/
+  line-height: 40px;
+}
+.top_tabs .tab.active {
+  background-color: #40454e;
+  color: #079fd1;
+}
+.top_tabs .tab.inactive {
+  background-color: #30343d;
+  color: #696c70;
+}
+.top_tabs .tab span {
+  padding-left: 1em;
+  background-repeat: no-repeat;
+  -webkit-background-size: auto 0.9em;
+          background-size: auto 0.9em;
+  background-position: left;
+}
+.top_tabs #tab1 {
+  float: left;
+  border-right: 1px solid #333;
+  background-position: 5px center;
+}
+.top_tabs #tab1.inactive span {
+  background-image: url('../img/icon-position2.png');
+}
+.top_tabs #tab1.active span {
+  background-image: url('../img/icon-position-blue.png');
+}
+.top_tabs #tab2 {
+  float: right;
+  background-position: left;
+}
+.top_tabs #tab2.inactive span {
+  background-image: url('../img/icon-star.png');
+}
+.top_tabs #tab2.active span {
+  background-image: url('../img/icon-star-blue.png');
+}
+.top_tabs + .container {
+  margin-top: 41px;
+  /*padding:0.8em 0;*/
+}
+.tab_list {
+  width: 100%;
+  overflow-x: hidden;
+}
+.tab_list .list_wrapper {
+  width: 200%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  -webkit-transition: right 0.5s;
+          transition: right 0.5s;
+}
+.tab_list.tab1_active .list_wrapper {
+  right: 0%;
+}
+.tab_list.tab2_active .list_wrapper {
+  right: 100%;
+}
+.tab_list ul {
+  width: 50%;
+  float: left;
+  /*padding: 0 1px;*/
+}
+.list_view {
+  color: white;
+  margin: 0 0 44px 0;
+  /*底部广告条的高度*/
+}
+.list_view li {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  background-color: #2a2d32;
+  margin: 0 0 1px 0;
+  overflow: hidden;
+  /*border-radius: 4px;*/
+}
+.list_view li .group_info {
+  padding: 1em;
+  margin-right: 40px;
+}
+.list_view li .group_info .name {
+  font-size: 1.2em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #fcfbfb;
+}
+.list_view li .group_info .info {
+  font-size: 0.8em;
+  color: #888989;
+  margin-top: 0.6em;
+}
+.list_view li .group_info .info span {
+  margin-right: 1.6em;
+}
+.list_view li .group_info .info img {
+  height: 0.9em;
+  margin-right: 0.3em;
+}
+.list_view li .group_info .info .message {
+  color: #079fd1 !important;
+}
+.list_view li .action {
+  /*height:@list_height;*/
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  position: absolute;
+  right: 10px;
+  top: 20px;
+  text-decoration: none;
+  color: white;
+  background-color: #353940;
+  -webkit-box-shadow: 0 2px 0 #202228;
+          box-shadow: 0 2px 0 #202228;
+}
+.list_view li .action.enter {
+  background: url('../img/icon-arrow_r-blue.png') no-repeat center #353940;
+  -webkit-background-size: auto 1em;
+          background-size: auto 1em;
+}
+.list_view li .action.full {
+  text-align: center;
+  color: #f46a66;
+  line-height: 40px;
+}
+.list_view li .action:active {
+  background-color: #045f7d;
+}
+/* ==========================================================================
+   CHAT
+   ========================================================================== */
+.chat_view {
+  margin: 0 0.6em 80px ;
+  /*底部输入的高度 + 20px*/
+  padding-top: 0 !important;
+  overflow: auto;
+  /*@border:2px;*/
+}
+.chat_view .datetime {
+  text-align: center;
+  color: #94969b;
+  font-size: 0.7em;
+  margin: 1em 0 0.6em;
+}
+.chat_view .message {
+  position: relative;
+  margin-bottom: 0.2em;
+  line-height: 1.5;
+  font-size: 0.9em;
+}
+.chat_view .avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #303339;
+  position: absolute;
+  margin-top: 4px;
+  /*top:-@border;*/
+}
+.chat_view .avatar img {
+  width: 30px;
+  /*margin:@border;*/
+}
+.chat_view .content {
+  color: white;
+  /*margin:0 @avatar/2;*/
+  /*display: inline-block;*/
+  border-radius: 2px;
+  /*width:100%;*/
+  margin: 0 40px;
+  background: #2a2d32;
+  padding: 0.6em 1.2em;
+}
+.chat_view .left .avatar {
+  left: 0;
+}
+.chat_view .left .content {
+  /*margin-left:10%;*/
+}
+.chat_view .right .avatar {
+  right: 0;
+}
+.chat_view .right .content {
+  /*background: #525761;*/
+  /*float:right;*/
+  /*padding:0.6em 1.4em;*/
+  /*text-align: right;*/
+  overflow: auto;
+  color: #079fd1;
+}
+.chat_view .right .content span {
+  float: right;
+}
+.chat_input {
+  position: fixed;
+  bottom: 0;
+  background: #2a2d32;
+  width: 100%;
+  border-top: 1px solid #40454e;
+  padding: 9px;
+}
+.chat_input input {
+  padding: 0.4em 0.7em;
+}
+.chat_input .message_input {
+  background: #40454e;
+  width: 80%;
+  color: white;
+}
+.chat_input .submit {
+  float: right;
+  width: 18%;
+  color: #079fd1;
+  background: none;
+  border: 0;
+}
+.chat_input .submit.disable {
+  color: #666;
+}
+.chat_input a {
+  display: inline-block;
+}
+.chat_input .back {
+  background: none;
+  border: none;
+  color: #ddd;
+  padding: 0.4em 0.4em;
+}
+.chat_input .back img {
+  height: 0.9em;
+  margin-right: 0.4em;
+}
+.chat_input .join_group {
+  padding: 0.4em 2.4em;
+  /*font-size: 1.2em;*/
+  float: right;
+}
+.chat_input .notice_full {
+  color: #f46a66;
+  float: right;
+  padding: 0.4em;
+}
+/* ==========================================================================
+   MISC
+   ========================================================================== */
+.overlay {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 4px;
+  text-align: center;
+  -webkit-box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+}
+#alert {
+  top: 50px;
+  z-index: 99999;
+  width: 220px;
+  left: 50%;
+  margin-left: -110px;
+  padding: 2em 1em 1em 1em;
+  color: #fedd02;
+  font-size: 1.1em;
+}
+#alert a {
+  color: #079fd1;
+  display: block;
+  /*float:right;*/
+  width: 100%;
+  text-align: center;
+  padding: 1em 0;
+  /*border:1px solid @main_blue;*/
+}
+#loading {
+  display: none;
+  top: 50%;
+  margin-top: -100px;
+  width: 120px;
+  left: 50%;
+  margin-left: -60px;
+  padding: 1em;
+}
+#loading img {
+  width: 40px;
+}
+#loading span {
+  display: block;
+  text-align: center;
+  width: 100%;
+  color: #ccc;
+}
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.clearfix:after {
+  clear: both;
+}
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.clearfix {
+  *zoom: 1;
+}

@@ -1,0 +1,203 @@
+<!doctype html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Secret匿名群</title>
+        <meta name="description" content="">
+       <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no" />
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        
+    </head>
+    <body>
+       <!--  <div class="top_ad download right_logo">
+            <p>下载秘密APP，免费获得电影票</p>
+        </div> -->
+
+      <!-- 新加入tabs -->
+        <div class="top_tabs clearfix">
+            <div class="tab active" id="tab1"><span>周边 (10)</span></div>
+            <div class="tab inactive" id="tab2"><span>热门 (20)</span></div>
+        </div>
+
+        <!-- list页的container class="list_view" -->
+        <div class="container list_view tab_list tab1_active">
+            <div class="list_wrapper clearfix">
+            <!-- 原来的grouping title去掉 -->
+            <!-- <p class="grouping_title">周边</p> -->
+
+
+            <!-- <div class="list_container"> -->
+                <ul id="tab1_list">
+                    
+
+                     <li>
+                        <div class="group_info">
+                            <div class="name">Hortor办公室
+                            </div>
+                            <div class="info">
+                                <span class="position"><img src="img/icon-position.png" />100米
+                                </span>
+                                <span class="member"><img src="img/icon-member.png" />23人
+                                </span>
+                    
+
+                            </div>
+                        </div>
+                        <a href="chat_view.html" class="action enter"></a>
+                        
+                    </li>
+
+                    <li>
+                        <div class="group_info">
+                            <div class="name">北京投资人圈名字长长长长
+                            </div>
+                            <div class="info">
+                                <span class="position"><img src="img/icon-position.png" />100米
+                                </span>
+                                <span class="member"><img src="img/icon-member.png" />23人
+                                </span>
+                            </div>
+                        </div>
+                        <a href="chat_full.html" class="action full">满</a>
+                        
+                    </li>
+
+                </ul>
+
+                <!-- 原来的grouping title去掉 -->
+
+                 <!-- <p class="grouping_title">热门</p> -->
+                <ul id="tab2_list">
+                    <li>
+                        <div class="group_info">
+                            <div class="name">Hortor办公室名字特别长长长长长
+                            </div>
+                            <div class="info">
+                                <span class="position"><img src="img/icon-position.png" />100米
+                                </span>
+                                <span class="member"><img src="img/icon-member.png" />23人
+                                </span>
+                            </div>
+                        </div>
+                        <a href="chat_full.html" class="action full">满</a>
+                        
+                    </li>
+                    <li>
+                        <div class="group_info">
+                            <div class="name">Hortor办公室名字特别长长长长长
+                            </div>
+                            <div class="info">
+                                 <span class="position"><img src="img/icon-position.png" />100米
+                                </span>
+                                <span class="member"><img src="img/icon-member.png" />23人
+                                </span>
+
+                            </div>
+                        </div>
+                        <a href="chat_full.html" class="action full">满</a>
+                        
+                    </li>
+
+                     <li>
+                        <div class="group_info">
+                            <div class="name">Hortor办公室
+                            </div>
+                            <div class="info">
+                                <span class="position"><img src="img/icon-position.png" />100米
+                                </span>
+                                <span class="member"><img src="img/icon-member.png" />23人
+                                </span>
+
+                            </div>
+                        </div>
+                        <a href="chat_view.html" class="action enter"></a>
+                        
+                    </li>
+                     <li>
+                        <div class="group_info">
+                            <div class="name">Hortor办公室
+                            </div>
+                            <div class="info">
+                                <span class="position"><img src="img/icon-position.png" />100米
+                                </span>
+                                <span class="member"><img src="img/icon-member.png" />23人
+                                </span>
+
+                            </div>
+                        </div>
+                        <a href="chat_view.html" class="action enter"></a>
+                        
+                    </li>
+                     <li>
+                        <div class="group_info">
+                            <div class="name">Hortor办公室
+                            </div>
+                            <div class="info">
+                                <span class="position"><img src="img/icon-position.png" />100米
+                                </span>
+                                <span class="member"><img src="img/icon-member.png" />23人
+                                </span>
+
+                            </div>
+                        </div>
+                        <a href="chat_view.html" class="action enter"></a>
+                        
+                    </li>
+                     <li>
+                        <div class="group_info">
+                            <div class="name">Hortor办公室
+                            </div>
+                            <div class="info">
+                                <span class="position"><img src="img/icon-position.png" />100米
+                                </span>
+                                <span class="member"><img src="img/icon-member.png" />23人
+                                </span>
+
+                            </div>
+                        </div>
+                        <a href="chat_view.html" class="action enter"></a>
+                        
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        
+        <!-- 底部广告条 -->
+          <div class="bottom_ad download right_logo">
+            <p>下载秘密APP，免费获得电影票</p>
+        </div>
+         <script src="js/vendor/jquery-1.11.1.min.js"></script>
+         <script>
+            $(document).ready(function(){
+
+
+                $('.tab').on('click', function(){
+                    if($(this).hasClass('inactive')){
+                        $('.tab').toggleClass('active inactive');
+
+                       
+                        $('.list_view').toggleClass('tab1_active tab2_active');
+                        var target = $(this).attr('id'),
+                            t_height = $('#'+target+'_list').height(); //44px是底部广告栏的高度
+
+                            current = $('#'+target+'_list').siblings();
+                            c_height = current.height();
+                            console.log(c_height);
+
+                             $('.list_wrapper').animate({'height':t_height},200);
+                        //调整list高度
+                      
+                       
+                    }
+                    
+                })
+            })
+
+         </script>
+
+    </body>
+</html>

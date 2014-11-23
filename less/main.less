@@ -1,0 +1,1331 @@
+/* ==========================================================================
+   general
+   ========================================================================== */
+@import "animation.less";
+
+@main_grey: #40454e;
+@dark_grey: #2a2d32;
+@dark_grey_active: #353940;
+@main_blue: #079fd1;
+@main_blue_active: #045f7d;
+@grey_text: #ccc;
+@pink: #f46a66;
+
+@yellow:#fedd02;
+
+html {
+    font-size: 1em;
+    line-height: 1.4;
+
+    font-family:"Hiragino Sans GB W3", "Microsoft YaHei", sans-serif;
+    font-weight: normal;
+
+
+}
+
+body{
+    min-height: 100%;
+    background: @main_grey;
+}
+
+body.share{
+    background:#282b33;
+    overflow: hidden;
+}
+
+html, body{
+        /*overflow:hidden;*/
+
+}
+
+div,input,ul, li{
+    box-sizing: border-box;
+}
+
+ul{
+    list-style-type: none;
+    margin:0;
+    padding: 0;
+}
+
+.container{
+    margin:0 0.8em;
+    
+}
+
+
+input{
+    border:1px solid #666;
+    border-radius: 0.2em;
+}
+
+input:focus{
+    border:1px solid @main_blue;
+    outline:none;
+}
+
+.blue_btn{
+    background-color: @main_blue;
+    border-radius: 2px;
+    color:white;
+    border:@main_blue;
+
+    &:active{
+        background-color: @main_blue_active;
+    }
+}
+
+strong{
+    color:@main_blue;
+}
+
+::-webkit-input-placeholder {
+   color: #555;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #555;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #555;  
+}
+
+:-ms-input-placeholder {  
+   color: #555;  
+}
+
+a{
+    text-decoration: none;
+}
+
+
+/* ==========================================================================
+    create group
+   ========================================================================== */
+body.create{
+    background:#fafafa;
+
+}
+.create.submitted{
+       
+  
+    #create_group{
+       
+        input[type="text"]{
+             animation-name:             hole; 
+            animation-duration:         4s; 
+            animation-iteration-count:  1;
+            animation-fill-mode: forwards;
+            animation-delay: 0.5s;
+
+            transition-timing-function: ease-in;
+        }
+       
+
+        .notice, .checkbox, input[type="submit"]{
+            opacity:0;
+            transition: opacity 1.5s;
+        }
+    }
+}
+#create_group{
+    margin:2.4em 0 3em 0;
+   
+    input[type="text"]{
+        background:#282b33;
+        width:100%;
+        padding: 0.8em;
+        font-size:1.2em;
+        color:@main_blue;
+    }
+
+    .notice, .checkbox, input[type="submit"]{
+        opacity:1;
+    }
+
+    .checkbox{
+        /*float: left;*/
+        /*width:60%;*/
+        color: #2a2d32;
+        margin-top:1.8em;
+        font-size:1.2em;
+        display: inline-block;
+        input{
+            display: none;
+        }
+
+        .box{
+            display: inline-block;
+            width:22px;
+            height:22px;
+            margin-right: 0.5em;
+            border-radius:2px;
+            background-color: #282b33;
+            float:left;
+        }
+
+        input:checked +label {
+            color:@main_blue;
+            div.box{
+                background: #282b33 url('../img/check.png') no-repeat center;
+                background-size:16px 16px;
+            }
+        }
+
+    }
+
+  
+        input[type="submit"]{
+            float:right;
+            padding:0.8em 1.2em;
+            font-size:1.2em; 
+            
+            width:6em;
+            margin-top:1.4em;
+
+            &.disable{
+                background:#666;
+                color:#aaa;
+            }
+        }
+        
+    
+}
+
+.notice{
+    background-color:#ececec;
+    width:100%;
+    color: #454a52;
+    border-radius:4px;
+    padding:0.4em 1em;
+    margin-top:0.2em;
+  
+    p {
+        line-height: 1.4;
+        font-size: 0.9em;
+        margin:0;
+       
+    }
+ 
+}
+
+/* ==========================================================================
+   SHARE
+   ========================================================================== */
+
+.share{
+    color:white;
+    width:100%;
+    overflow-x:hidden;
+
+    #arrow{
+        width:50%;
+        float:right;
+        margin-top:10px;
+    }
+    h1{
+        font-size: 1.5em;
+        clear:both;
+        text-align: center;
+        font-weight: normal;
+    }
+
+    h2{
+        font-size: 1.3em;
+        text-align: center;
+        font-weight: normal;
+    }
+    strong{
+        padding:0 1px;
+        font-weight: normal;
+    }
+}
+/*#share_avatars{
+    background:url('../img/share_bg.png') no-repeat center;
+    background-size:160px auto;
+   
+    width:160px;
+    height:166px;
+    margin:0 auto;
+
+    position: relative;
+
+     @avatar: 60px;
+
+    .avatar{
+        width:@avatar;
+        height:@avatar;
+        border-radius:50%;
+        background-color: #303339;
+        position: absolute;
+        
+        img{
+            width:@avatar;
+        }
+
+        &.first{
+            top:49px;
+            left:3px;
+        }
+
+        &.second{
+            top:3px;
+            left:97px;
+        }
+
+        &.third{
+            top:103px;
+            left:97px;
+        }
+    }
+
+}
+*/
+.container.share{
+    padding:0;
+    margin:0;
+    height:100%;
+    #share_notice{
+        opacity:0;
+        position: absolute;
+        top:0;
+        width:100%;
+       
+        transform: scale(0) translate(0, 450px);
+        
+    }
+
+    /*general avatar styles*/
+
+    #avatars_container{
+        position: absolute;
+        top:40%;
+        width:420px;
+        height:400px;
+        margin:0 auto;
+        left:50%;
+        margin-left:-210px;
+
+        opacity:0;
+        overflow: initial;
+        transform: scale(0) translate(0, -450px);
+        
+
+    }
+    .avatar{
+        
+        background:url('../img/avatar_unknown.png') no-repeat center;
+        background-size: 100%;
+        position: absolute;
+        z-index: 1000;
+
+        width:46px;
+        height:46px;
+        margin-left:-23px;
+
+        /*position animation*/
+    transition:top 1s , left 1s , width 0.5s , height 0.5s , opacity 1s, margin-left 0.5s;
+
+
+        span{
+            display: none;
+        }
+        &.big{
+            width:66px;
+            height:66px;
+            margin-left:-33px;
+        }
+
+        &.small{
+            width:30px;
+            height:30px;
+            margin-left:-15px;
+        }
+        img{
+            width:100%;
+            transition:margin-left 1s;
+        }
+    }
+
+
+    /*我*/
+
+    #ava_1{
+        z-index: 2000;
+         span{
+            display: block;
+            width:100%;
+            text-align: center;
+            position: absolute;
+            top:-23px;
+            color:white;
+        }
+    }
+    /*朋友1*/
+    #ava_2{
+        z-index: 1999;
+
+    }
+    /*朋友2*/
+    #ava_3{
+        z-index: 1998;
+
+    }
+
+    /****************
+    default positions
+    *****************/
+
+    .position1{
+        #ava_1{
+            left:33%;
+            top:90px;
+        }
+
+        #ava_2{
+            left:65%;
+            top:80px;
+        }
+
+        #ava_3{
+            left:50%;
+            top:140px;
+        }
+
+        #ava_4{
+            left:66%;
+            top:150px;
+        }
+
+        #ava_5{
+            left:82%;
+            top:120px;
+        }
+
+        #ava_6{
+            left:90%;
+            top:70px;
+        }
+        #ava_7{
+            left:99%;
+            top:110px;
+        }
+
+        #ava_8{
+            left:50%;
+            top:70px;
+        }
+        #ava_9{
+            left:22%;
+            top:60px;
+        }
+        #ava_10{
+            left:30%;
+            top:160px;
+        }
+
+        #ava_11{
+            left:8%;
+            top:80px;
+        }
+        #ava_12{
+            left:3%;
+            top:130px;
+        }
+
+
+        #ava_13{
+            left:60%;
+            top:200px;
+        }
+
+        #ava_14{
+            left:67%;
+            top:40px;
+        }
+
+        #ava_15{
+            left:78%;
+            top:60px;
+        }
+
+        #ava_16{
+            left:98%;
+            top:50px;
+        }
+
+        #ava_17{
+            left:77%;
+            top:176px;
+        }
+
+        #ava_18{
+            left:93%;
+            top:160px;
+        }
+
+        #ava_19{
+            left:38%;
+            top:50px;
+        }
+
+        #ava_20{
+            left:17%;
+            top:120px;
+        }
+
+        #ava_21{
+            left:15%;
+            top:160px;
+        }
+
+        #ava_22{
+            left:3%;
+            top:50px;
+        }
+
+        #ava_23{
+            left:40%;
+            top:190px;
+        }
+
+        #ava_24{
+            opacity: 0;
+              left:33%;
+            top:90px;
+        }
+        #ava_25{
+            opacity: 0;
+              left:33%;
+            top:90px;
+        }
+
+    }
+
+    .position2{
+
+        /*所有头像大小相同*/
+        .avatar.big, .avatar.small{
+            width:46px;
+            height:46px;
+            margin-left:-23px;
+        }
+
+        .added img{
+            margin-left:-23px !important;
+        }
+        /*row 1*/
+        #ava_4{
+            left:10%;
+            top:30px;
+        }
+
+        #ava_5{
+            left:30%;
+            top:30px;
+        }
+
+        #ava_6{
+            left:50%;
+            top:30px;
+        }
+        #ava_7{
+            left:70%;
+            top:30px;
+        }
+
+        #ava_8{
+            left:90%;
+            top:30px;
+        }
+
+        /*row2*/
+        #ava_9{
+            left:10%;
+            top:80px;
+        }
+        #ava_10{
+            left:30%;
+            top:80px;
+        }
+
+        #ava_11{
+            left:50%;
+            top:80px;
+        }
+        #ava_12{
+            left:70%;
+            top:80px;
+        }
+
+
+        #ava_13{
+            left:90%;
+            top:80px;
+        }
+        /*row3*/
+        #ava_14{
+            left:10%;
+            top:130px;
+        }
+        #ava_1{
+            left:30%;
+            top:130px;
+        }
+        
+        #ava_2{
+            left:50%;
+            top:130px;
+        }
+
+        #ava_3{
+            left:70%;
+            top:130px;
+        }
+        #ava_15{
+            left:90%;
+            top:130px;
+        }
+
+        /*row4*/
+
+        #ava_16{
+            left:10%;
+            top:180px;
+        }
+
+        #ava_17{
+            left:30%;
+            top:180px;
+        }
+
+        #ava_18{
+            left:50%;
+            top:180px;
+        }
+
+        #ava_19{
+            left:70%;
+            top:180px;
+        }
+
+        #ava_20{
+            left:90%;
+            top:180px;
+        }
+
+        /*row5*/
+        #ava_21{
+            left:10%;
+            top:230px;
+        }
+
+        #ava_22{
+            left:30%;
+            top:230px;
+        }
+
+        #ava_23{
+            left:50%;
+            top:230px;
+        }
+
+        #ava_24{
+            opacity:1;
+            left:70%;
+            top:230px;
+        }
+
+        #ava_25{
+            opacity:1;
+            left:90%;
+            top:230px;
+        }
+
+
+    }
+
+
+
+    /*进入share页面，头像闪烁，文字淡入*/
+    &.entering{
+        #share_notice{
+            opacity:1;
+            /*transition:all 2s;*/
+            top:0;
+
+             transform: scale(1) translate(0, 0);
+             transition: transform 2s, opacity 1s;
+            
+        }
+        #avatars_container{
+            opacity:1 !important;
+            /*transition:all 2s;*/
+            top:40%;
+            transform: scale(1) translate(0, 0);
+            transition: transform 2s, opacity 1s;
+            transition-delay:0.5s;
+        }
+        
+
+
+
+        #ava_1,
+        #ava_5,
+        #ava_8
+        #ava_10,
+
+        #ava_17,
+        #ava_22{
+            animation-name:             floating1; 
+            animation-duration:         3s; 
+            animation-iteration-count:  infinite;
+        }
+
+
+        #ava_2,
+        #ava_6,
+
+        #ava_12,
+        #ava_16,
+        #ava_18,
+        #ava_20{
+            animation-name:             floating2; 
+            animation-duration:         1.5s; 
+            animation-iteration-count:  infinite;
+        }
+
+        #ava_4,
+        #ava_7,
+        #ava_9,
+        #ava_11,
+        #ava_14,
+
+        #ava_19,
+        #ava_23,
+        #ava_25{
+            animation-name:             floating3; 
+            animation-duration:         2s; 
+            animation-iteration-count:  infinite;
+        }
+
+
+        #ava_3,
+        #ava_13,
+        #ava_15,
+        #ava_19,
+        #ava_21,
+        #ava_24{
+            animation-name:             floating4; 
+            animation-duration:         2s; 
+            animation-iteration-count:  infinite;
+        }
+
+    }
+
+
+
+    /*新人加入*/
+
+    #ava_2, #ava_3{
+        /*text-align: center;*/
+        img{
+            position: absolute;
+            width:0;
+            top: 33px;
+            left:50%;
+            margin-left:0;
+            transition:all 1.5s;
+
+        }
+    }
+
+    #ava_2.added, #ava_3.added{
+        img{
+            width:100%;
+            top:0;
+            margin-left:-33px;
+        }
+    }
+
+
+    /*人满，开始聊天*/
+
+    &.leaving{
+        #share_notice{
+            top:-100%;
+            opacity: 0;
+            transition: all 2s;
+            transition-delay: 0.5s;
+        }
+
+        #avatars_container{
+            top:-100%;
+            opacity:0;
+            /*transition-delay: 3s;*/
+            transition: all 2s;
+            /*transition-delay: 2s;*/
+            .avatar{
+                transition-delay: 4s;
+                -webkit-transition-delay: 4s;
+            }
+            #ava_22,
+            #ava_9,
+            #ava_19,
+            #ava_8,
+            #ava_14,
+            #ava_15,
+            #ava_6,
+            #ava_18{
+                top:-100% !important;
+                transition:top 4s;
+                /*transition-delay: 2s;*/
+            }
+
+            #ava_11,
+            #ava_1,
+            #ava_8,
+            #ava_2,
+            #ava_6,
+            #ava_7    {
+                top:-100% !important;
+                transition:top 4.6s;
+                /*transition-delay: 2.5s;*/
+            }
+
+             #ava_2,
+            #ava_21,
+            #ava_10,
+            #ava_3,
+            #ava_4,
+            #ava_17 ,
+            #ava_7    {
+                top:-100% !important;
+                transition:top 4.7s;
+                /*transition-delay: 3s;*/
+            }
+
+        }
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   FOLLOW
+   ========================================================================== */
+
+.follow{
+    ul{
+        width:13em;
+        margin:0 auto;
+        font-size: 1.2em;
+
+
+        .box{
+            border-radius: 4px;
+            width:1.4em;
+            height:1.4em;
+            display: inline-block;
+            margin-right: 0.5em;
+             background: @dark_grey url('../img/check.png') no-repeat center;
+            background-size:1.2em;
+            position: relative;
+            top:0.4em;
+        }
+
+    }
+    .foxhole{
+        width:62px;
+        display: block;
+        margin:2em auto;
+    }
+
+
+
+}
+
+
+
+/* ==========================================================================
+   LIST view 2 pages
+   ========================================================================== */
+
+.top_ad{
+    position: fixed;
+    top:0;
+    z-index: 999;
+    width: 100%;
+    height: 44px;
+    
+    text-align: center;
+    background:#e9ecf1;
+    &.right_logo{
+        background:#e9ecf1 url('../img/logo-fox@2x.png') right no-repeat;
+        background-size:auto 44px;
+    }
+
+    p{
+        margin:0;
+        line-height: 44px;
+    }
+    
+
+    /*chat page*/
+    /*顶部关注按钮*/
+    &.follow{
+        button{
+            border:0;
+            padding:0.3em 0.4em;
+            margin-right: 0.4em;
+        }
+    }
+
+}
+
+.bottom_ad{
+    position: fixed;
+    bottom:0;
+    z-index: 999;
+    width: 100%;
+    height: 44px;
+
+    text-align: center;
+    background:#4b515b;
+    border-top: 1px solid #6d6c6d;
+
+    &.right_logo{
+        background:#4b515b url('../img/logo-fox@2x.png') right no-repeat;
+        background-size:auto 44px;
+    }
+
+    p{
+        margin:0;
+        line-height: 44px;
+        color:white;
+    }
+}
+
+
+.top_ad + .container{
+    margin-top:44px;
+    padding:0.8em 0;
+}
+
+
+.top_tabs{
+    position: fixed;
+    top:0;
+    z-index: 1001;
+    width:100%;
+    border-bottom: 1px solid #202228;
+    background-color: @dark_grey;
+    .tab{
+        width:50%;
+       
+        text-align: center;
+       
+        font-size: 0.9em;
+        /*padding:0.8em;*/
+        line-height: 40px;
+
+       
+        &.active{
+            background-color: #40454e;
+            color:@main_blue;
+        }
+
+        &.inactive{
+             background-color: #30343d;
+              color:#696c70;
+        }
+
+        span{
+            padding-left:1em;
+            background-repeat: no-repeat;
+            background-size:auto 0.9em;
+            background-position: left;
+        }
+    }
+     #tab1{
+        float:left;
+        border-right: 1px solid #333;
+        background-position: 5px center;
+        &.inactive span{
+            background-image:url('../img/icon-position2.png');
+        }
+        
+        &.active span{
+            background-image:url('../img/icon-position-blue.png');
+        }
+    }
+    #tab2{
+        float: right;
+                    background-position: left;
+
+        &.inactive span{
+            background-image:url('../img/icon-star.png');
+        }
+        &.active span{
+            background-image:url('../img/icon-star-blue.png');
+        }
+    }
+}
+
+
+.top_tabs + .container{
+    margin-top:41px;
+    /*padding:0.8em 0;*/
+}
+
+.tab_list{ 
+    width:100%;
+    overflow-x:hidden;
+     .list_wrapper{
+        width:200%;
+        height:100%;
+        overflow: hidden;
+        position: relative;
+        transition: right 0.5s;
+     }
+
+     &.tab1_active{
+        .list_wrapper{
+            right:0%;
+
+        }
+     }
+
+     &.tab2_active{
+        .list_wrapper{
+            right:100%;
+        }
+     }
+
+    ul{
+        width:50%;
+        float:left;
+        /*padding: 0 1px;*/
+    }
+}
+
+.list_view{
+    color:white;
+    margin: 0 0 44px 0; /*底部广告条的高度*/
+
+     @list_height:80px;
+
+
+ 
+
+    li{
+
+        position: relative;
+        width:100%;
+        height:@list_height;
+
+        background-color: @dark_grey;
+        margin:0 0 1px 0;
+        overflow: hidden;
+        /*border-radius: 4px;*/
+        
+        .group_info{
+            padding:1em;
+            margin-right: 40px;
+
+            .name{
+                font-size: 1.2em;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                color:#fcfbfb;
+            }
+
+            .info{
+                font-size:0.8em;
+                color: #888989;
+                margin-top:0.6em;
+                span{
+                    margin-right: 1.6em;
+                }
+                img{
+                    height:0.9em;
+                    margin-right:0.3em;
+                }
+
+                .message{
+                    color:@main_blue !important;
+                }
+
+            }
+
+        }
+        
+       
+        .action{
+            /*height:@list_height;*/
+            height:40px;
+            width:40px;
+            border-radius: 20px;
+            position: absolute;
+            right: 10px;
+            top:20px;
+            text-decoration: none;
+            color:white;
+            background-color: @dark_grey_active;
+            box-shadow: 0 2px 0 #202228;
+            &.enter{
+                background: url('../img/icon-arrow_r-blue.png') no-repeat center  @dark_grey_active;
+                background-size:auto 1em;
+            }
+
+            &.full{
+                text-align: center;
+                color: @pink;
+                line-height: 40px;
+            }
+
+            &:active{
+                background-color:@main_blue_active;
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+   CHAT
+   ========================================================================== */
+
+.chat_view{
+    margin: 0 0.6em 80px ; /*底部输入的高度 + 20px*/
+    padding-top:0 !important;
+    overflow: auto;
+
+    .datetime{
+        text-align: center;
+        color: #94969b;
+        font-size: 0.7em;
+        margin:1em 0 0.6em;
+    }
+    .message{
+        position: relative;
+        margin-bottom: 0.2em;
+        line-height: 1.5;
+        font-size: 0.9em;
+    }
+    @avatar: 30px;
+    /*@border:2px;*/
+
+    .avatar{
+        width:@avatar;
+        height:@avatar;
+        border-radius:50%;
+        background-color: #303339;
+        position: absolute;
+        margin-top:4px;
+        /*top:-@border;*/
+
+        img{
+            width:@avatar ;
+            /*margin:@border;*/
+        }
+    }
+
+    .content{
+       
+        color:white;
+        /*margin:0 @avatar/2;*/
+        
+        /*display: inline-block;*/
+        border-radius: 2px;
+        /*width:100%;*/
+        margin:0 40px;
+        background:@dark_grey;
+        padding:0.6em 1.2em;
+    }
+
+    .left{
+        .avatar{
+            left:0;
+        }
+        .content{
+            /*margin-left:10%;*/
+             
+             
+        }
+    }
+
+
+
+    .right{
+        .avatar{
+            right:0;
+        }
+        .content{
+            /*background: #525761;*/
+            /*float:right;*/
+            /*padding:0.6em 1.4em;*/
+            /*text-align: right;*/
+            overflow: auto;
+            color:@main_blue;
+
+            span{
+                float:right;
+            }
+        }
+
+    }
+}
+
+
+.chat_input{
+    position: fixed;
+    bottom: 0;
+    background: @dark_grey;
+    width:100%;
+    border-top:1px solid @main_grey;
+    padding:9px;
+    input{
+        padding: 0.4em 0.7em;
+
+    }
+    .message_input{
+        background:@main_grey;
+        width:80%;
+        color:white;
+    }
+    .submit{
+        float:right;
+        width:18%;
+        color:@main_blue;
+        background:none;
+        border:0;
+        &.disable{
+            color:#666;
+        }
+    }
+
+    a{
+        display: inline-block;
+    }
+    .back{
+        background:none;
+        border:none;
+        color:#ddd;
+        padding:0.4em 0.4em;
+
+        img{
+            height:0.9em;
+            margin-right: 0.4em
+        }
+    }
+    .join_group{
+        padding:0.4em 2.4em;
+        /*font-size: 1.2em;*/
+        float: right;
+    }
+
+    .notice_full{
+        color:@pink;
+        float:right;
+        padding:0.4em;
+    }
+}
+
+/* ==========================================================================
+   MISC
+   ========================================================================== */
+
+.overlay{
+    position: fixed;
+    background:rgba(0,0,0,0.8);
+    border-radius: 4px;
+     text-align: center;
+     box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+}
+
+#alert{
+    top:50px;
+    z-index: 99999;
+    width:220px;
+   
+    left:50%;
+    margin-left:-110px;
+    padding:2em 1em 1em 1em;
+    color:@yellow;
+   
+    font-size: 1.1em;
+    
+
+    a{
+        color:@main_blue;
+        display: block;
+        /*float:right;*/
+        width:100%;
+        text-align: center;
+        padding:1em 0;
+        /*border:1px solid @main_blue;*/
+    }
+}
+
+
+
+#loading{
+    display:none;
+    top:50%;
+    margin-top:-100px;
+    width:120px;
+    left:50%;
+    margin-left: -60px;
+    padding:1em;
+    img{
+        width:40px;
+    }
+    span{
+        display: block;
+        text-align: center;
+        width:100%;
+        color:#ccc;
+    }
+}
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}
+
